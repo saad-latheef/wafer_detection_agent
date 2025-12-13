@@ -17,21 +17,20 @@ def main():
     print("╚" + "═"*68 + "╝")
     print()
     
-    # Use test.jpg as input - the ingestion agent will convert it to wafer map format
-    test_image = os.path.join(project_root, "test.jpg")
+    # Use wafer.npy as input
+    test_input = os.path.join(project_root, "wafer.npy")
     
-    if not os.path.exists(test_image):
-        # Fallback to wafer.npy if test.jpg doesn't exist
-        test_image = os.path.join(project_root, "wafer.npy")
-        print(f"⚠️ test.jpg not found, using fallback: {test_image}")
-    else:
-        print(f"📁 Using input image: {test_image}")
+    if not os.path.exists(test_input):
+        print(f"❌ wafer.npy not found at: {test_input}")
+        return
+    
+    print(f"📁 Using wafer map: {test_input}")
     
     print()
     
     # Create shared context
     context = WaferContext(
-        image_path=test_image,
+        image_path=test_input,
         max_attempts=3
     )
     

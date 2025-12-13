@@ -21,6 +21,9 @@ tqdm>=4.65
 # Data manipulation
 pandas>=2.0
 
+# Computer vision for wafer mask extraction
+opencv-python>=4.8
+
 # =====================================
 # Additional dependencies for the Agent system
 # =====================================

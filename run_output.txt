@@ -1,0 +1,100 @@
+﻿python : Traceback 
+(most recent call 
+last):
+At line:1 char:1
++ python main.py 
+2>&1 | Out-File 
+-FilePath 
+run_output.txt 
+-Encoding utf ...
++ ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo   
+           : NotSpe  
+  cified: (Traceba   
+ ck (most recent     
+call last)::Stri    
+ng) [], RemoteEx    
+ception
+    + FullyQualified 
+   ErrorId : Native  
+  CommandError
+ 
+  File "C:\Coding\Hac
+kathon\wafer_detectio
+n_agent\agents\ml_age
+nt.py", line 16, in 
+<module>
+    import torch
+ModuleNotFoundError: 
+No module named 
+'torch'
+
+During handling of 
+the above exception, 
+another exception 
+occurred:
+
+Traceback (most 
+recent call last):
+  File "C:\Coding\Hac
+kathon\wafer_detectio
+n_agent\main.py", 
+line 10, in <module>
+    from agents.coord
+inator_agent import c
+oordinator_sequential
+  File "C:\Coding\Hac
+kathon\wafer_detectio
+n_agent\agents\coordi
+nator_agent.py", 
+line 5, in <module>
+    from agents.detec
+tion_loop_agent 
+import 
+detection_loop_agent
+  File "C:\Coding\Hac
+kathon\wafer_detectio
+n_agent\agents\detect
+ion_loop_agent.py", 
+line 4, in <module>
+    from agents.detec
+tion_agent import 
+detection_agent
+  File "C:\Coding\Hac
+kathon\wafer_detectio
+n_agent\agents\detect
+ion_agent.py", line 
+3, in <module>
+    from 
+agents.ml_agent 
+import ml_agent
+  File "C:\Coding\Hac
+kathon\wafer_detectio
+n_agent\agents\ml_age
+nt.py", line 24, in 
+<module>
+    print(f"[ML 
+Agent Init] 
+\u26a0\ufe0f PyTorch 
+not available: {e}")
+  File "C:\Users\vais
+hnav\AppData\Local\Pr
+ograms\Python\Python3
+11\Lib\encodings\cp12
+52.py", line 19, in 
+encode
+    return codecs.cha
+rmap_encode(input,sel
+f.errors,encoding_tab
+le)[0]
+           ^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
+^^^
+UnicodeEncodeError: 
+'charmap' codec 
+can't encode 
+characters in 
+position 16-17: 
+character maps to 
+<undefined>

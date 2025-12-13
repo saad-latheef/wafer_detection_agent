@@ -1,0 +1,17 @@
+# Core numerical computation
+numpy>=1.24
+
+# Image handling (resize synthetic wafers)
+Pillow>=9.5
+
+# PyTorch (model + inference)
+torch>=2.0
+torchvision>=0.15
+
+# Optional but useful (visualization / debugging)
+matplotlib>=3.7
+
+# Quality-of-life utilities
+tqdm>=4.65
+
+pandas>=2.0

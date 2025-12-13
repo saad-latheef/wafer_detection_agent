@@ -1,0 +1,30 @@
+# Wafer Detection Agent - Requirements
+# =====================================
+
+# Core numerical computation
+numpy>=1.24
+
+# Image handling (resize synthetic wafers)
+Pillow>=9.5
+
+# PyTorch (model + inference)
+# For CPU-only installation, use: pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+torch>=2.0
+torchvision>=0.15
+
+# Data visualization (optional but useful for debugging)
+matplotlib>=3.7
+
+# Progress bars for long operations
+tqdm>=4.65
+
+# Data manipulation
+pandas>=2.0
+
+# =====================================
+# Additional dependencies for the Agent system
+# =====================================
+
+# None required - the google.adk mock is included in the project
+# For production with real Google ADK, you would add:
+# google-adk>=0.1.0  # (hypothetical package)

@@ -1,0 +1,14 @@
+# Virtual environments
+.venv/
+
+
+# Large datasets / models
+*.pkl
+*.npy
+*.pt
+*.h5
+*.ckpt
+
+# Python
+__pycache__/
+*.pyc

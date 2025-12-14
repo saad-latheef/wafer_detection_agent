@@ -31,3 +31,10 @@ opencv-python>=4.8
 # None required - the google.adk mock is included in the project
 # For production with real Google ADK, you would add:
 # google-adk>=0.1.0  # (hypothetical package)
+
+# =====================================
+# API Server dependencies
+# =====================================
+fastapi>=0.104
+uvicorn>=0.24
+python-multipart>=0.0.6

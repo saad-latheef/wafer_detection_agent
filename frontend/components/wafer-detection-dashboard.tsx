@@ -19,6 +19,7 @@ import {
   ChevronLeft,
   Printer,
   Download,
+  ArrowLeft,
 } from "lucide-react"
 import { cn } from "@/lib/utils"
 
@@ -125,7 +126,11 @@ type ProbabilityResult = {
   probability: number
 }
 
-export function WaferDetectionDashboard() {
+interface WaferDetectionDashboardProps {
+  onBack?: () => void
+}
+
+export function WaferDetectionDashboard({ onBack }: WaferDetectionDashboardProps) {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false)
   const [uploadedImages, setUploadedImages] = useState<Array<{ id: string; url: string; file?: File; fileName: string }>>([])
   const [currentWaferId, setCurrentWaferId] = useState<string | null>(null)
@@ -736,11 +741,11 @@ ${separator}
   }
 
   return (
-    <div className="flex min-h-screen bg-background">
+    <div className="flex min-h-screen bg-background-darker text-text-primary">
       {/* Sidebar */}
       <aside
         className={cn(
-          "fixed left-0 top-0 h-screen border-r border-border bg-sidebar transition-all duration-300 z-10",
+          "fixed left-0 top-0 h-screen border-r border-white/10 bg-background-card/50 backdrop-blur-xl transition-all duration-300 z-10",
           sidebarCollapsed ? "w-16" : "w-64",
         )}
       >
@@ -752,17 +757,30 @@ ${separator}
               </div>
               {!sidebarCollapsed && (
                 <div>
-                  <h1 className="text-lg font-bold text-sidebar-foreground">WaferDetect</h1>
-                  <p className="text-xs text-sidebar-foreground/60">v24.1 Enterprise</p>
+                  <h1 className="text-lg font-bold text-text-primary">WaferDetect</h1>
+                  <p className="text-xs text-text-primary/60">v24.1 Enterprise</p>
                 </div>
               )}
             </div>
           </div>
 
           <nav className="space-y-2">
+            {onBack && (
+              <Button
+                variant="ghost"
+                onClick={onBack}
+                className={cn(
+                  "w-full text-text-secondary hover:text-text-primary hover:bg-white/5 mb-4",
+                  sidebarCollapsed ? "justify-center px-0" : "justify-start",
+                )}
+              >
+                <ArrowLeft className={cn("h-4 w-4", !sidebarCollapsed && "mr-2")} />
+                {!sidebarCollapsed && "Back to Home"}
+              </Button>
+            )}
             <Button
               variant="secondary"
-              className={cn("w-full", sidebarCollapsed ? "justify-center px-0" : "justify-start")}
+              className={cn("w-full bg-primary/10 text-primary hover:bg-primary/20", sidebarCollapsed ? "justify-center px-0" : "justify-start")}
             >
               <Activity className={cn("h-4 w-4", !sidebarCollapsed && "mr-2")} />
               {!sidebarCollapsed && "Dashboard"}
@@ -770,7 +788,7 @@ ${separator}
             <Button
               variant="ghost"
               className={cn(
-                "w-full text-sidebar-foreground hover:text-sidebar-foreground hover:bg-sidebar-accent",
+                "w-full text-text-primary hover:text-text-primary hover:bg-white/5",
                 sidebarCollapsed ? "justify-center px-0" : "justify-start",
               )}
             >
@@ -780,7 +798,7 @@ ${separator}
             <Button
               variant="ghost"
               className={cn(
-                "w-full text-sidebar-foreground hover:text-sidebar-foreground hover:bg-sidebar-accent",
+                "w-full text-text-primary hover:text-text-primary hover:bg-white/5",
                 sidebarCollapsed ? "justify-center px-0" : "justify-start",
               )}
             >
@@ -794,9 +812,9 @@ ${separator}
               <>
                 <div className="flex items-center gap-2 text-sm">
                   <div className="h-2 w-2 rounded-full bg-chart-4 animate-pulse" />
-                  <span className="text-sidebar-foreground/80">System Operational</span>
+                  <span className="text-text-primary/80">System Operational</span>
                 </div>
-                <p className="text-xs text-sidebar-foreground/60 mt-1">All agents online</p>
+                <p className="text-xs text-text-primary/60 mt-1">All agents online</p>
               </>
             )}
             {sidebarCollapsed && (

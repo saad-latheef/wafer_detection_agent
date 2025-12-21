@@ -92,3 +92,1936 @@
 [00:38:43.826] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766309716965}
 [00:39:01.109] Server  LOG      ✓ Compiled in 552ms
 [00:39:05.128] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analysis color: rgb(120, 120, 120) color: inherit {"dp":"/analysis","o":"http://localhost:3000/analysis","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766309739695}
+[00:43:52.937] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:43:53.155] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:43:53.155] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:43:53.155] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766310027730}
+[00:44:50.463] Server  LOG      ✓ Compiled in 182ms
+[00:45:13.275] Server  LOG      ✓ Compiled in 139ms
+[00:45:33.740] Server  LOG      ✓ Compiled in 154ms
+[00:45:47.523] Server  LOG      ✓ Compiled in 123ms
+[00:47:05.948] Server  LOG      ✓ Compiled in 562ms
+[00:47:09.577] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analysis color: rgb(120, 120, 120) color: inherit {"dp":"/analysis","o":"http://localhost:3000/analysis","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766310224145}
+[00:47:36.387] Server  LOG      ✓ Compiled in 272ms
+[00:58:31.069] Server  LOG      ✓ Compiled in 979ms
+[00:58:51.563] Server  LOG      ✓ Compiled in 688ms
+[00:59:09.433] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:59:09.592] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:59:09.592] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/analysis","route":"/analysis"}
+[00:59:09.592] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analysis color: rgb(120, 120, 120) color: inherit {"dp":"/analysis","o":"http://localhost:3000/analysis","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766310944164}
+[01:00:07.307] Server  ERROR    ⨯ ./components/wafer-detection-dashboard.tsx:6:1
+Module not found: Can't resolve './analysis/AnalysisCanvas'
+  4 | import { motion, AnimatePresence } from "framer-motion"
+  5 | import ControlBar from "./analysis/ControlBar"
+> 6 | import AnalysisCanvas from "./analysis/AnalysisCanvas"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import ResultsPanel from "./analysis/ResultsPanel"
+  8 | import HistoryPanel from "./analysis/HistoryPanel"
+  9 | import { useToast } from "@/components/ui/use-toast"
+
+
+
+Import traces:
+  Client Component Browser:
+    ./components/wafer-detection-dashboard.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/wafer-detection-dashboard.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:00:07.311] Server  ERROR    ⨯ ./components/wafer-detection-dashboard.tsx:6:1
+Module not found: Can't resolve './analysis/AnalysisCanvas'
+  4 | import { motion, AnimatePresence } from "framer-motion"
+  5 | import ControlBar from "./analysis/ControlBar"
+> 6 | import AnalysisCanvas from "./analysis/AnalysisCanvas"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import ResultsPanel from "./analysis/ResultsPanel"
+  8 | import HistoryPanel from "./analysis/HistoryPanel"
+  9 | import { useToast } from "@/components/ui/use-toast"
+
+
+
+Import traces:
+  Client Component Browser:
+    ./components/wafer-detection-dashboard.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/wafer-detection-dashboard.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:00:07.313] Server  ERROR    ⨯ ./components/wafer-detection-dashboard.tsx:6:1
+Module not found: Can't resolve './analysis/AnalysisCanvas'
+  4 | import { motion, AnimatePresence } from "framer-motion"
+  5 | import ControlBar from "./analysis/ControlBar"
+> 6 | import AnalysisCanvas from "./analysis/AnalysisCanvas"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import ResultsPanel from "./analysis/ResultsPanel"
+  8 | import HistoryPanel from "./analysis/HistoryPanel"
+  9 | import { useToast } from "@/components/ui/use-toast"
+
+
+
+Import traces:
+  Client Component Browser:
+    ./components/wafer-detection-dashboard.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/wafer-detection-dashboard.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:00:07.316] Server  ERROR    ⨯ ./components/wafer-detection-dashboard.tsx:6:1
+Module not found: Can't resolve './analysis/AnalysisCanvas'
+  4 | import { motion, AnimatePresence } from "framer-motion"
+  5 | import ControlBar from "./analysis/ControlBar"
+> 6 | import AnalysisCanvas from "./analysis/AnalysisCanvas"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import ResultsPanel from "./analysis/ResultsPanel"
+  8 | import HistoryPanel from "./analysis/HistoryPanel"
+  9 | import { useToast } from "@/components/ui/use-toast"
+
+
+
+Import traces:
+  Client Component Browser:
+    ./components/wafer-detection-dashboard.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/wafer-detection-dashboard.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:00:07.392] Server  ERROR    ⨯ ./components/wafer-detection-dashboard.tsx:6:1
+Module not found: Can't resolve './analysis/AnalysisCanvas'
+  4 | import { motion, AnimatePresence } from "framer-motion"
+  5 | import ControlBar from "./analysis/ControlBar"
+> 6 | import AnalysisCanvas from "./analysis/AnalysisCanvas"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import ResultsPanel from "./analysis/ResultsPanel"
+  8 | import HistoryPanel from "./analysis/HistoryPanel"
+  9 | import { useToast } from "@/components/ui/use-toast"
+
+
+
+Import traces:
+  Client Component Browser:
+    ./components/wafer-detection-dashboard.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/wafer-detection-dashboard.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:00:07.395] Server  ERROR    ⨯ ./components/wafer-detection-dashboard.tsx:6:1
+Module not found: Can't resolve './analysis/AnalysisCanvas'
+  4 | import { motion, AnimatePresence } from "framer-motion"
+  5 | import ControlBar from "./analysis/ControlBar"
+> 6 | import AnalysisCanvas from "./analysis/AnalysisCanvas"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import ResultsPanel from "./analysis/ResultsPanel"
+  8 | import HistoryPanel from "./analysis/HistoryPanel"
+  9 | import { useToast } from "@/components/ui/use-toast"
+
+
+
+Import traces:
+  Client Component Browser:
+    ./components/wafer-detection-dashboard.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/wafer-detection-dashboard.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:00:07.398] Server  ERROR    ⨯ ./components/wafer-detection-dashboard.tsx:6:1
+Module not found: Can't resolve './analysis/AnalysisCanvas'
+  4 | import { motion, AnimatePresence } from "framer-motion"
+  5 | import ControlBar from "./analysis/ControlBar"
+> 6 | import AnalysisCanvas from "./analysis/AnalysisCanvas"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import ResultsPanel from "./analysis/ResultsPanel"
+  8 | import HistoryPanel from "./analysis/HistoryPanel"
+  9 | import { useToast } from "@/components/ui/use-toast"
+
+
+
+Import traces:
+  Client Component Browser:
+    ./components/wafer-detection-dashboard.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/wafer-detection-dashboard.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:00:07.400] Server  ERROR    ⨯ ./components/wafer-detection-dashboard.tsx:6:1
+Module not found: Can't resolve './analysis/AnalysisCanvas'
+  4 | import { motion, AnimatePresence } from "framer-motion"
+  5 | import ControlBar from "./analysis/ControlBar"
+> 6 | import AnalysisCanvas from "./analysis/AnalysisCanvas"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import ResultsPanel from "./analysis/ResultsPanel"
+  8 | import HistoryPanel from "./analysis/HistoryPanel"
+  9 | import { useToast } from "@/components/ui/use-toast"
+
+
+
+Import traces:
+  Client Component Browser:
+    ./components/wafer-detection-dashboard.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/wafer-detection-dashboard.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:00:07.403] Server  ERROR    ⨯ ./components/wafer-detection-dashboard.tsx:6:1
+Module not found: Can't resolve './analysis/AnalysisCanvas'
+  4 | import { motion, AnimatePresence } from "framer-motion"
+  5 | import ControlBar from "./analysis/ControlBar"
+> 6 | import AnalysisCanvas from "./analysis/AnalysisCanvas"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import ResultsPanel from "./analysis/ResultsPanel"
+  8 | import HistoryPanel from "./analysis/HistoryPanel"
+  9 | import { useToast } from "@/components/ui/use-toast"
+
+
+
+Import traces:
+  Client Component Browser:
+    ./components/wafer-detection-dashboard.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/wafer-detection-dashboard.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:00:07.405] Server  ERROR    ⨯ ./components/wafer-detection-dashboard.tsx:6:1
+Module not found: Can't resolve './analysis/AnalysisCanvas'
+  4 | import { motion, AnimatePresence } from "framer-motion"
+  5 | import ControlBar from "./analysis/ControlBar"
+> 6 | import AnalysisCanvas from "./analysis/AnalysisCanvas"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import ResultsPanel from "./analysis/ResultsPanel"
+  8 | import HistoryPanel from "./analysis/HistoryPanel"
+  9 | import { useToast } from "@/components/ui/use-toast"
+
+
+
+Import traces:
+  Client Component Browser:
+    ./components/wafer-detection-dashboard.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/wafer-detection-dashboard.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:00:07.407] Server  ERROR    ⨯ ./components/wafer-detection-dashboard.tsx:6:1
+Module not found: Can't resolve './analysis/AnalysisCanvas'
+  4 | import { motion, AnimatePresence } from "framer-motion"
+  5 | import ControlBar from "./analysis/ControlBar"
+> 6 | import AnalysisCanvas from "./analysis/AnalysisCanvas"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import ResultsPanel from "./analysis/ResultsPanel"
+  8 | import HistoryPanel from "./analysis/HistoryPanel"
+  9 | import { useToast } from "@/components/ui/use-toast"
+
+
+
+Import traces:
+  Client Component Browser:
+    ./components/wafer-detection-dashboard.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/wafer-detection-dashboard.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:00:07.410] Server  ERROR    ⨯ ./components/wafer-detection-dashboard.tsx:6:1
+Module not found: Can't resolve './analysis/AnalysisCanvas'
+  4 | import { motion, AnimatePresence } from "framer-motion"
+  5 | import ControlBar from "./analysis/ControlBar"
+> 6 | import AnalysisCanvas from "./analysis/AnalysisCanvas"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import ResultsPanel from "./analysis/ResultsPanel"
+  8 | import HistoryPanel from "./analysis/HistoryPanel"
+  9 | import { useToast } from "@/components/ui/use-toast"
+
+
+
+Import traces:
+  Client Component Browser:
+    ./components/wafer-detection-dashboard.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/wafer-detection-dashboard.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:00:07.413] Server  ERROR    ⨯ ./components/wafer-detection-dashboard.tsx:6:1
+Module not found: Can't resolve './analysis/AnalysisCanvas'
+  4 | import { motion, AnimatePresence } from "framer-motion"
+  5 | import ControlBar from "./analysis/ControlBar"
+> 6 | import AnalysisCanvas from "./analysis/AnalysisCanvas"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import ResultsPanel from "./analysis/ResultsPanel"
+  8 | import HistoryPanel from "./analysis/HistoryPanel"
+  9 | import { useToast } from "@/components/ui/use-toast"
+
+
+
+Import traces:
+  Client Component Browser:
+    ./components/wafer-detection-dashboard.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/wafer-detection-dashboard.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:00:07.416] Server  ERROR    ⨯ ./components/wafer-detection-dashboard.tsx:6:1
+Module not found: Can't resolve './analysis/AnalysisCanvas'
+  4 | import { motion, AnimatePresence } from "framer-motion"
+  5 | import ControlBar from "./analysis/ControlBar"
+> 6 | import AnalysisCanvas from "./analysis/AnalysisCanvas"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import ResultsPanel from "./analysis/ResultsPanel"
+  8 | import HistoryPanel from "./analysis/HistoryPanel"
+  9 | import { useToast } from "@/components/ui/use-toast"
+
+
+
+Import traces:
+  Client Component Browser:
+    ./components/wafer-detection-dashboard.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/wafer-detection-dashboard.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:00:07.419] Server  ERROR    ⨯ ./components/wafer-detection-dashboard.tsx:6:1
+Module not found: Can't resolve './analysis/AnalysisCanvas'
+  4 | import { motion, AnimatePresence } from "framer-motion"
+  5 | import ControlBar from "./analysis/ControlBar"
+> 6 | import AnalysisCanvas from "./analysis/AnalysisCanvas"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import ResultsPanel from "./analysis/ResultsPanel"
+  8 | import HistoryPanel from "./analysis/HistoryPanel"
+  9 | import { useToast } from "@/components/ui/use-toast"
+
+
+
+Import traces:
+  Client Component Browser:
+    ./components/wafer-detection-dashboard.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/wafer-detection-dashboard.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:00:07.422] Server  ERROR    ⨯ ./components/wafer-detection-dashboard.tsx:6:1
+Module not found: Can't resolve './analysis/AnalysisCanvas'
+  4 | import { motion, AnimatePresence } from "framer-motion"
+  5 | import ControlBar from "./analysis/ControlBar"
+> 6 | import AnalysisCanvas from "./analysis/AnalysisCanvas"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import ResultsPanel from "./analysis/ResultsPanel"
+  8 | import HistoryPanel from "./analysis/HistoryPanel"
+  9 | import { useToast } from "@/components/ui/use-toast"
+
+
+
+Import traces:
+  Client Component Browser:
+    ./components/wafer-detection-dashboard.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/wafer-detection-dashboard.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:00:07.426] Server  ERROR    ⨯ ./components/wafer-detection-dashboard.tsx:6:1
+Module not found: Can't resolve './analysis/AnalysisCanvas'
+  4 | import { motion, AnimatePresence } from "framer-motion"
+  5 | import ControlBar from "./analysis/ControlBar"
+> 6 | import AnalysisCanvas from "./analysis/AnalysisCanvas"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import ResultsPanel from "./analysis/ResultsPanel"
+  8 | import HistoryPanel from "./analysis/HistoryPanel"
+  9 | import { useToast } from "@/components/ui/use-toast"
+
+
+
+Import traces:
+  Client Component Browser:
+    ./components/wafer-detection-dashboard.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/wafer-detection-dashboard.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:00:07.428] Server  ERROR    ⨯ ./components/wafer-detection-dashboard.tsx:6:1
+Module not found: Can't resolve './analysis/AnalysisCanvas'
+  4 | import { motion, AnimatePresence } from "framer-motion"
+  5 | import ControlBar from "./analysis/ControlBar"
+> 6 | import AnalysisCanvas from "./analysis/AnalysisCanvas"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import ResultsPanel from "./analysis/ResultsPanel"
+  8 | import HistoryPanel from "./analysis/HistoryPanel"
+  9 | import { useToast } from "@/components/ui/use-toast"
+
+
+
+Import traces:
+  Client Component Browser:
+    ./components/wafer-detection-dashboard.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/wafer-detection-dashboard.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:00:07.431] Server  ERROR    ⨯ ./components/wafer-detection-dashboard.tsx:6:1
+Module not found: Can't resolve './analysis/AnalysisCanvas'
+  4 | import { motion, AnimatePresence } from "framer-motion"
+  5 | import ControlBar from "./analysis/ControlBar"
+> 6 | import AnalysisCanvas from "./analysis/AnalysisCanvas"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import ResultsPanel from "./analysis/ResultsPanel"
+  8 | import HistoryPanel from "./analysis/HistoryPanel"
+  9 | import { useToast } from "@/components/ui/use-toast"
+
+
+
+Import traces:
+  Client Component Browser:
+    ./components/wafer-detection-dashboard.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/wafer-detection-dashboard.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:00:07.433] Server  ERROR    ⨯ ./components/wafer-detection-dashboard.tsx:6:1
+Module not found: Can't resolve './analysis/AnalysisCanvas'
+  4 | import { motion, AnimatePresence } from "framer-motion"
+  5 | import ControlBar from "./analysis/ControlBar"
+> 6 | import AnalysisCanvas from "./analysis/AnalysisCanvas"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import ResultsPanel from "./analysis/ResultsPanel"
+  8 | import HistoryPanel from "./analysis/HistoryPanel"
+  9 | import { useToast } from "@/components/ui/use-toast"
+
+
+
+Import traces:
+  Client Component Browser:
+    ./components/wafer-detection-dashboard.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/wafer-detection-dashboard.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:00:07.439] Server  LOG      ✓ Compiled in 188ms
+[01:00:07.772] Server  ERROR    ⨯ ./app/analysis/page.tsx:3:1
+Module not found: Can't resolve '@/components/wafer-detection-dashboard'
+  1 | "use client";
+  2 |
+> 3 | import { WaferDetectionDashboard } from "@/components/wafer-detection-dashboard";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useRouter } from "next/navigation";
+  5 |
+  6 | export default function AnalysisPage() {
+
+Import map: aliased to relative './components/wafer-detection-dashboard' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/analysis/page.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/analysis/page.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:00:07.777] Server  ERROR    ⨯ ./app/analysis/page.tsx:3:1
+Module not found: Can't resolve '@/components/wafer-detection-dashboard'
+  1 | "use client";
+  2 |
+> 3 | import { WaferDetectionDashboard } from "@/components/wafer-detection-dashboard";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useRouter } from "next/navigation";
+  5 |
+  6 | export default function AnalysisPage() {
+
+Import map: aliased to relative './components/wafer-detection-dashboard' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/analysis/page.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/analysis/page.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:00:07.779] Server  ERROR    ⨯ ./app/analysis/page.tsx:3:1
+Module not found: Can't resolve '@/components/wafer-detection-dashboard'
+  1 | "use client";
+  2 |
+> 3 | import { WaferDetectionDashboard } from "@/components/wafer-detection-dashboard";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useRouter } from "next/navigation";
+  5 |
+  6 | export default function AnalysisPage() {
+
+Import map: aliased to relative './components/wafer-detection-dashboard' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/analysis/page.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/analysis/page.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:00:07.780] Server  ERROR    ⨯ ./app/analysis/page.tsx:3:1
+Module not found: Can't resolve '@/components/wafer-detection-dashboard'
+  1 | "use client";
+  2 |
+> 3 | import { WaferDetectionDashboard } from "@/components/wafer-detection-dashboard";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useRouter } from "next/navigation";
+  5 |
+  6 | export default function AnalysisPage() {
+
+Import map: aliased to relative './components/wafer-detection-dashboard' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/analysis/page.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/analysis/page.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:00:07.789] Server  ERROR    ⨯ ./app/analysis/page.tsx:3:1
+Module not found: Can't resolve '@/components/wafer-detection-dashboard'
+  1 | "use client";
+  2 |
+> 3 | import { WaferDetectionDashboard } from "@/components/wafer-detection-dashboard";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useRouter } from "next/navigation";
+  5 |
+  6 | export default function AnalysisPage() {
+
+Import map: aliased to relative './components/wafer-detection-dashboard' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/analysis/page.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/analysis/page.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:00:07.791] Server  ERROR    ⨯ ./app/analysis/page.tsx:3:1
+Module not found: Can't resolve '@/components/wafer-detection-dashboard'
+  1 | "use client";
+  2 |
+> 3 | import { WaferDetectionDashboard } from "@/components/wafer-detection-dashboard";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useRouter } from "next/navigation";
+  5 |
+  6 | export default function AnalysisPage() {
+
+Import map: aliased to relative './components/wafer-detection-dashboard' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/analysis/page.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/analysis/page.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:00:07.792] Server  ERROR    ⨯ ./app/analysis/page.tsx:3:1
+Module not found: Can't resolve '@/components/wafer-detection-dashboard'
+  1 | "use client";
+  2 |
+> 3 | import { WaferDetectionDashboard } from "@/components/wafer-detection-dashboard";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useRouter } from "next/navigation";
+  5 |
+  6 | export default function AnalysisPage() {
+
+Import map: aliased to relative './components/wafer-detection-dashboard' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/analysis/page.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/analysis/page.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:00:07.793] Server  ERROR    ⨯ ./app/analysis/page.tsx:3:1
+Module not found: Can't resolve '@/components/wafer-detection-dashboard'
+  1 | "use client";
+  2 |
+> 3 | import { WaferDetectionDashboard } from "@/components/wafer-detection-dashboard";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useRouter } from "next/navigation";
+  5 |
+  6 | export default function AnalysisPage() {
+
+Import map: aliased to relative './components/wafer-detection-dashboard' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/analysis/page.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/analysis/page.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:00:07.795] Server  ERROR    ⨯ ./app/analysis/page.tsx:3:1
+Module not found: Can't resolve '@/components/wafer-detection-dashboard'
+  1 | "use client";
+  2 |
+> 3 | import { WaferDetectionDashboard } from "@/components/wafer-detection-dashboard";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useRouter } from "next/navigation";
+  5 |
+  6 | export default function AnalysisPage() {
+
+Import map: aliased to relative './components/wafer-detection-dashboard' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/analysis/page.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/analysis/page.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:00:07.797] Server  ERROR    ⨯ ./app/analysis/page.tsx:3:1
+Module not found: Can't resolve '@/components/wafer-detection-dashboard'
+  1 | "use client";
+  2 |
+> 3 | import { WaferDetectionDashboard } from "@/components/wafer-detection-dashboard";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useRouter } from "next/navigation";
+  5 |
+  6 | export default function AnalysisPage() {
+
+Import map: aliased to relative './components/wafer-detection-dashboard' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/analysis/page.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/analysis/page.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:00:07.798] Server  ERROR    ⨯ ./app/analysis/page.tsx:3:1
+Module not found: Can't resolve '@/components/wafer-detection-dashboard'
+  1 | "use client";
+  2 |
+> 3 | import { WaferDetectionDashboard } from "@/components/wafer-detection-dashboard";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useRouter } from "next/navigation";
+  5 |
+  6 | export default function AnalysisPage() {
+
+Import map: aliased to relative './components/wafer-detection-dashboard' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/analysis/page.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/analysis/page.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:00:07.800] Server  ERROR    ⨯ ./app/analysis/page.tsx:3:1
+Module not found: Can't resolve '@/components/wafer-detection-dashboard'
+  1 | "use client";
+  2 |
+> 3 | import { WaferDetectionDashboard } from "@/components/wafer-detection-dashboard";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useRouter } from "next/navigation";
+  5 |
+  6 | export default function AnalysisPage() {
+
+Import map: aliased to relative './components/wafer-detection-dashboard' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/analysis/page.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/analysis/page.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:00:07.803] Server  ERROR    ⨯ ./app/analysis/page.tsx:3:1
+Module not found: Can't resolve '@/components/wafer-detection-dashboard'
+  1 | "use client";
+  2 |
+> 3 | import { WaferDetectionDashboard } from "@/components/wafer-detection-dashboard";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useRouter } from "next/navigation";
+  5 |
+  6 | export default function AnalysisPage() {
+
+Import map: aliased to relative './components/wafer-detection-dashboard' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/analysis/page.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/analysis/page.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:00:07.805] Server  ERROR    ⨯ ./app/analysis/page.tsx:3:1
+Module not found: Can't resolve '@/components/wafer-detection-dashboard'
+  1 | "use client";
+  2 |
+> 3 | import { WaferDetectionDashboard } from "@/components/wafer-detection-dashboard";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useRouter } from "next/navigation";
+  5 |
+  6 | export default function AnalysisPage() {
+
+Import map: aliased to relative './components/wafer-detection-dashboard' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/analysis/page.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/analysis/page.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:00:07.806] Server  ERROR    ⨯ ./app/analysis/page.tsx:3:1
+Module not found: Can't resolve '@/components/wafer-detection-dashboard'
+  1 | "use client";
+  2 |
+> 3 | import { WaferDetectionDashboard } from "@/components/wafer-detection-dashboard";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useRouter } from "next/navigation";
+  5 |
+  6 | export default function AnalysisPage() {
+
+Import map: aliased to relative './components/wafer-detection-dashboard' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/analysis/page.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/analysis/page.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:00:07.808] Server  ERROR    ⨯ ./app/analysis/page.tsx:3:1
+Module not found: Can't resolve '@/components/wafer-detection-dashboard'
+  1 | "use client";
+  2 |
+> 3 | import { WaferDetectionDashboard } from "@/components/wafer-detection-dashboard";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useRouter } from "next/navigation";
+  5 |
+  6 | export default function AnalysisPage() {
+
+Import map: aliased to relative './components/wafer-detection-dashboard' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/analysis/page.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/analysis/page.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:00:07.810] Server  ERROR    ⨯ ./app/analysis/page.tsx:3:1
+Module not found: Can't resolve '@/components/wafer-detection-dashboard'
+  1 | "use client";
+  2 |
+> 3 | import { WaferDetectionDashboard } from "@/components/wafer-detection-dashboard";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useRouter } from "next/navigation";
+  5 |
+  6 | export default function AnalysisPage() {
+
+Import map: aliased to relative './components/wafer-detection-dashboard' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/analysis/page.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/analysis/page.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:00:07.811] Server  ERROR    ⨯ ./app/analysis/page.tsx:3:1
+Module not found: Can't resolve '@/components/wafer-detection-dashboard'
+  1 | "use client";
+  2 |
+> 3 | import { WaferDetectionDashboard } from "@/components/wafer-detection-dashboard";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useRouter } from "next/navigation";
+  5 |
+  6 | export default function AnalysisPage() {
+
+Import map: aliased to relative './components/wafer-detection-dashboard' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/analysis/page.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/analysis/page.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:00:07.815] Server  ERROR    ⨯ ./app/analysis/page.tsx:3:1
+Module not found: Can't resolve '@/components/wafer-detection-dashboard'
+  1 | "use client";
+  2 |
+> 3 | import { WaferDetectionDashboard } from "@/components/wafer-detection-dashboard";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useRouter } from "next/navigation";
+  5 |
+  6 | export default function AnalysisPage() {
+
+Import map: aliased to relative './components/wafer-detection-dashboard' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/analysis/page.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/analysis/page.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:00:07.827] Server  ERROR    ⨯ ./app/analysis/page.tsx:3:1
+Module not found: Can't resolve '@/components/wafer-detection-dashboard'
+  1 | "use client";
+  2 |
+> 3 | import { WaferDetectionDashboard } from "@/components/wafer-detection-dashboard";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useRouter } from "next/navigation";
+  5 |
+  6 | export default function AnalysisPage() {
+
+Import map: aliased to relative './components/wafer-detection-dashboard' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/analysis/page.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/analysis/page.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[01:00:07.830] Server  LOG      ✓ Compiled in 346ms
+[01:00:08.238] Browser ERROR   ./components/wafer-detection-dashboard.tsx:6:1
+Module not found: Can't resolve './analysis/AnalysisCanvas'
+  4 | import { motion, AnimatePresence } from "framer-motion"
+  5 | import ControlBar from "./analysis/ControlBar"
+> 6 | import AnalysisCanvas from "./analysis/AnalysisCanvas"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import ResultsPanel from "./analysis/ResultsPanel"
+  8 | import HistoryPanel from "./analysis/HistoryPanel"
+  9 | import { useToast } from "@/components/ui/use-toast"
+
+Import traces:
+  Client Component Browser:
+    ./components/wafer-detection-dashboard.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/wafer-detection-dashboard.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[01:00:08.238] Browser ERROR   ./app/analysis/page.tsx:3:1
+Module not found: Can't resolve '@/components/wafer-detection-dashboard'
+  1 | "use client";
+  2 |
+> 3 | import { WaferDetectionDashboard } from "@/components/wafer-detection-dashboard";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useRouter } from "next/navigation";
+  5 |
+  6 | export default function AnalysisPage() {
+
+Import map: aliased to relative './components/wafer-detection-dashboard' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./app/analysis/page.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/analysis/page.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[01:00:08.259] Browser ERROR   ./components/wafer-detection-dashboard.tsx:6:1
+Module not found: Can't resolve './analysis/AnalysisCanvas'
+  4 | import { motion, AnimatePresence } from "framer-motion"
+  5 | import ControlBar from "./analysis/ControlBar"
+> 6 | import AnalysisCanvas from "./analysis/AnalysisCanvas"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import ResultsPanel from "./analysis/ResultsPanel"
+  8 | import HistoryPanel from "./analysis/HistoryPanel"
+  9 | import { useToast } from "@/components/ui/use-toast"
+
+Import traces:
+  Client Component Browser:
+    ./components/wafer-detection-dashboard.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/wafer-detection-dashboard.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[01:00:08.259] Browser ERROR   ./app/analysis/page.tsx:3:1
+Module not found: Can't resolve '@/components/wafer-detection-dashboard'
+  1 | "use client";
+  2 |
+> 3 | import { WaferDetectionDashboard } from "@/components/wafer-detection-dashboard";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useRouter } from "next/navigation";
+  5 |
+  6 | export default function AnalysisPage() {
+
+Import map: aliased to relative './components/wafer-detection-dashboard' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./app/analysis/page.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/analysis/page.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[01:00:08.260] Browser ERROR   ./components/wafer-detection-dashboard.tsx:6:1
+Module not found: Can't resolve './analysis/AnalysisCanvas'
+  4 | import { motion, AnimatePresence } from "framer-motion"
+  5 | import ControlBar from "./analysis/ControlBar"
+> 6 | import AnalysisCanvas from "./analysis/AnalysisCanvas"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import ResultsPanel from "./analysis/ResultsPanel"
+  8 | import HistoryPanel from "./analysis/HistoryPanel"
+  9 | import { useToast } from "@/components/ui/use-toast"
+
+Import traces:
+  Client Component Browser:
+    ./components/wafer-detection-dashboard.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/wafer-detection-dashboard.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[01:00:08.260] Browser ERROR   ./app/analysis/page.tsx:3:1
+Module not found: Can't resolve '@/components/wafer-detection-dashboard'
+  1 | "use client";
+  2 |
+> 3 | import { WaferDetectionDashboard } from "@/components/wafer-detection-dashboard";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useRouter } from "next/navigation";
+  5 |
+  6 | export default function AnalysisPage() {
+
+Import map: aliased to relative './components/wafer-detection-dashboard' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./app/analysis/page.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/analysis/page.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[01:00:08.284] Browser ERROR   ./components/wafer-detection-dashboard.tsx:6:1
+Module not found: Can't resolve './analysis/AnalysisCanvas'
+  4 | import { motion, AnimatePresence } from "framer-motion"
+  5 | import ControlBar from "./analysis/ControlBar"
+> 6 | import AnalysisCanvas from "./analysis/AnalysisCanvas"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import ResultsPanel from "./analysis/ResultsPanel"
+  8 | import HistoryPanel from "./analysis/HistoryPanel"
+  9 | import { useToast } from "@/components/ui/use-toast"
+
+Import traces:
+  Client Component Browser:
+    ./components/wafer-detection-dashboard.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/wafer-detection-dashboard.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[01:00:08.284] Browser ERROR   ./app/analysis/page.tsx:3:1
+Module not found: Can't resolve '@/components/wafer-detection-dashboard'
+  1 | "use client";
+  2 |
+> 3 | import { WaferDetectionDashboard } from "@/components/wafer-detection-dashboard";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useRouter } from "next/navigation";
+  5 |
+  6 | export default function AnalysisPage() {
+
+Import map: aliased to relative './components/wafer-detection-dashboard' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./app/analysis/page.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/analysis/page.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[01:00:29.779] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:00:30.041] Browser ERROR   ./app/analysis/page.tsx:3:1
+Module not found: Can't resolve '@/components/wafer-detection-dashboard'
+  1 | "use client";
+  2 |
+> 3 | import { WaferDetectionDashboard } from "@/components/wafer-detection-dashboard";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useRouter } from "next/navigation";
+  5 |
+  6 | export default function AnalysisPage() {
+
+Import map: aliased to relative './components/wafer-detection-dashboard' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./app/analysis/page.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/analysis/page.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[01:00:30.041] Browser ERROR   ./app/analysis/page.tsx:3:1
+Module not found: Can't resolve '@/components/wafer-detection-dashboard'
+  1 | "use client";
+  2 |
+> 3 | import { WaferDetectionDashboard } from "@/components/wafer-detection-dashboard";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useRouter } from "next/navigation";
+  5 |
+  6 | export default function AnalysisPage() {
+
+Import map: aliased to relative './components/wafer-detection-dashboard' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./app/analysis/page.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/analysis/page.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[01:00:30.041] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:00:30.041] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[01:00:30.041] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766311024616}
+[01:00:30.238] Browser ERROR   ./app/analysis/page.tsx:3:1
+Module not found: Can't resolve '@/components/wafer-detection-dashboard'
+  1 | "use client";
+  2 |
+> 3 | import { WaferDetectionDashboard } from "@/components/wafer-detection-dashboard";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useRouter } from "next/navigation";
+  5 |
+  6 | export default function AnalysisPage() {
+
+Import map: aliased to relative './components/wafer-detection-dashboard' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./app/analysis/page.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/analysis/page.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[01:00:30.238] Browser ERROR   ./app/analysis/page.tsx:3:1
+Module not found: Can't resolve '@/components/wafer-detection-dashboard'
+  1 | "use client";
+  2 |
+> 3 | import { WaferDetectionDashboard } from "@/components/wafer-detection-dashboard";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useRouter } from "next/navigation";
+  5 |
+  6 | export default function AnalysisPage() {
+
+Import map: aliased to relative './components/wafer-detection-dashboard' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./app/analysis/page.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/analysis/page.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[01:00:30.239] Browser ERROR   ./app/analysis/page.tsx:3:1
+Module not found: Can't resolve '@/components/wafer-detection-dashboard'
+  1 | "use client";
+  2 |
+> 3 | import { WaferDetectionDashboard } from "@/components/wafer-detection-dashboard";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useRouter } from "next/navigation";
+  5 |
+  6 | export default function AnalysisPage() {
+
+Import map: aliased to relative './components/wafer-detection-dashboard' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./app/analysis/page.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/analysis/page.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[01:00:30.239] Browser ERROR   ./app/analysis/page.tsx:3:1
+Module not found: Can't resolve '@/components/wafer-detection-dashboard'
+  1 | "use client";
+  2 |
+> 3 | import { WaferDetectionDashboard } from "@/components/wafer-detection-dashboard";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useRouter } from "next/navigation";
+  5 |
+  6 | export default function AnalysisPage() {
+
+Import map: aliased to relative './components/wafer-detection-dashboard' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./app/analysis/page.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/analysis/page.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[01:00:30.241] Browser ERROR   ./app/analysis/page.tsx:3:1
+Module not found: Can't resolve '@/components/wafer-detection-dashboard'
+  1 | "use client";
+  2 |
+> 3 | import { WaferDetectionDashboard } from "@/components/wafer-detection-dashboard";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useRouter } from "next/navigation";
+  5 |
+  6 | export default function AnalysisPage() {
+
+Import map: aliased to relative './components/wafer-detection-dashboard' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./app/analysis/page.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/analysis/page.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[01:00:30.241] Browser ERROR   ./app/analysis/page.tsx:3:1
+Module not found: Can't resolve '@/components/wafer-detection-dashboard'
+  1 | "use client";
+  2 |
+> 3 | import { WaferDetectionDashboard } from "@/components/wafer-detection-dashboard";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useRouter } from "next/navigation";
+  5 |
+  6 | export default function AnalysisPage() {
+
+Import map: aliased to relative './components/wafer-detection-dashboard' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./app/analysis/page.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/analysis/page.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[01:01:13.885] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:01:14.154] Browser ERROR   ./app/analysis/page.tsx:3:1
+Module not found: Can't resolve '@/components/wafer-detection-dashboard'
+  1 | "use client";
+  2 |
+> 3 | import { WaferDetectionDashboard } from "@/components/wafer-detection-dashboard";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useRouter } from "next/navigation";
+  5 |
+  6 | export default function AnalysisPage() {
+
+Import map: aliased to relative './components/wafer-detection-dashboard' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./app/analysis/page.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/analysis/page.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[01:01:14.154] Browser ERROR   ./app/analysis/page.tsx:3:1
+Module not found: Can't resolve '@/components/wafer-detection-dashboard'
+  1 | "use client";
+  2 |
+> 3 | import { WaferDetectionDashboard } from "@/components/wafer-detection-dashboard";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useRouter } from "next/navigation";
+  5 |
+  6 | export default function AnalysisPage() {
+
+Import map: aliased to relative './components/wafer-detection-dashboard' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./app/analysis/page.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/analysis/page.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[01:01:14.154] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:01:14.154] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[01:01:14.154] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766311068729}
+[01:01:14.236] Browser ERROR   ./app/analysis/page.tsx:3:1
+Module not found: Can't resolve '@/components/wafer-detection-dashboard'
+  1 | "use client";
+  2 |
+> 3 | import { WaferDetectionDashboard } from "@/components/wafer-detection-dashboard";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useRouter } from "next/navigation";
+  5 |
+  6 | export default function AnalysisPage() {
+
+Import map: aliased to relative './components/wafer-detection-dashboard' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./app/analysis/page.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/analysis/page.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[01:01:14.236] Browser ERROR   ./app/analysis/page.tsx:3:1
+Module not found: Can't resolve '@/components/wafer-detection-dashboard'
+  1 | "use client";
+  2 |
+> 3 | import { WaferDetectionDashboard } from "@/components/wafer-detection-dashboard";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useRouter } from "next/navigation";
+  5 |
+  6 | export default function AnalysisPage() {
+
+Import map: aliased to relative './components/wafer-detection-dashboard' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./app/analysis/page.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/analysis/page.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[01:01:14.237] Browser ERROR   ./app/analysis/page.tsx:3:1
+Module not found: Can't resolve '@/components/wafer-detection-dashboard'
+  1 | "use client";
+  2 |
+> 3 | import { WaferDetectionDashboard } from "@/components/wafer-detection-dashboard";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useRouter } from "next/navigation";
+  5 |
+  6 | export default function AnalysisPage() {
+
+Import map: aliased to relative './components/wafer-detection-dashboard' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./app/analysis/page.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/analysis/page.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[01:01:14.238] Browser ERROR   ./app/analysis/page.tsx:3:1
+Module not found: Can't resolve '@/components/wafer-detection-dashboard'
+  1 | "use client";
+  2 |
+> 3 | import { WaferDetectionDashboard } from "@/components/wafer-detection-dashboard";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useRouter } from "next/navigation";
+  5 |
+  6 | export default function AnalysisPage() {
+
+Import map: aliased to relative './components/wafer-detection-dashboard' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./app/analysis/page.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/analysis/page.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[01:01:14.238] Browser ERROR   ./app/analysis/page.tsx:3:1
+Module not found: Can't resolve '@/components/wafer-detection-dashboard'
+  1 | "use client";
+  2 |
+> 3 | import { WaferDetectionDashboard } from "@/components/wafer-detection-dashboard";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useRouter } from "next/navigation";
+  5 |
+  6 | export default function AnalysisPage() {
+
+Import map: aliased to relative './components/wafer-detection-dashboard' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./app/analysis/page.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/analysis/page.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[01:01:14.238] Browser ERROR   ./app/analysis/page.tsx:3:1
+Module not found: Can't resolve '@/components/wafer-detection-dashboard'
+  1 | "use client";
+  2 |
+> 3 | import { WaferDetectionDashboard } from "@/components/wafer-detection-dashboard";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 | import { useRouter } from "next/navigation";
+  5 |
+  6 | export default function AnalysisPage() {
+
+Import map: aliased to relative './components/wafer-detection-dashboard' inside of [project]/
+
+Import traces:
+  Client Component Browser:
+    ./app/analysis/page.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/analysis/page.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[01:01:58.087] Server  LOG      ✓ Compiled in 183ms
+[01:02:00.955] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:02:02.248] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:02:02.248] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/analysis","route":"/analysis"}
+[01:02:02.248] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analysis color: rgb(120, 120, 120) color: inherit {"dp":"/analysis","o":"http://localhost:3000/analysis","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766311116048}
+[01:02:12.321] Server  LOG      ✓ Compiled in 69ms
+[01:02:27.957] Server  LOG      ✓ Compiled in 63ms
+[01:03:08.519] Server  LOG      ✓ Compiled in 270ms
+[01:03:37.436] Server  LOG      ✓ Compiled in 131ms
+[01:03:58.084] Server  LOG      ✓ Compiled in 134ms
+[01:04:30.305] Server  LOG      ✓ Compiled in 86ms
+[01:05:06.483] Server  LOG      ✓ Compiled in 58ms
+[01:29:36.490] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analysis color: rgb(120, 120, 120) color: inherit {"dp":"/analysis","o":"http://localhost:3000/analysis","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766312771052}
+[01:29:56.708] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766312791270}
+[01:30:12.574] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analysis color: rgb(120, 120, 120) color: inherit {"dp":"/analysis","o":"http://localhost:3000/analysis","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766312807149}
+[01:31:07.693] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766312862250}
+[01:31:42.431] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:31:42.687] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:31:42.687] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[01:31:42.687] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766312897262}
+[01:32:04.344] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analysis color: rgb(120, 120, 120) color: inherit {"dp":"/analysis","o":"http://localhost:3000/analysis","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766312918915}
+[01:32:33.340] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766312947903}
+[02:02:50.243] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analysis color: rgb(120, 120, 120) color: inherit {"dp":"/analysis","o":"http://localhost:3000/analysis","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766314764814}
+[02:03:07.385] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:03:07.627] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[02:03:07.627] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[02:03:07.627] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766314782197}
+[02:24:26.922] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analysis color: rgb(120, 120, 120) color: inherit {"dp":"/analysis","o":"http://localhost:3000/analysis","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766316061497}
+[02:43:09.437] Server  LOG      ✓ Compiled in 2.2s
+[02:43:10.288] Browser ERROR   ./components/wafer-detection-dashboard.tsx:837:39
+Parsing ecmascript source code failed
+  835 |               )}
+  836 |             >
+> 837 |               <Cpu className="h-4 w-4", !sidebarCollapsed && "mr-2")} />
+      |                                       ^
+  838 |               {!sidebarCollapsed && "Model Config"}
+  839 |             </Button>
+  840 |           </nav>
+
+Expected '</', got ','
+
+Import traces:
+  Client Component Browser:
+    ./components/wafer-detection-dashboard.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/wafer-detection-dashboard.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Server Component]
+[02:43:11.240] Browser ERROR   ./components/wafer-detection-dashboard.tsx:837:39
+Parsing ecmascript source code failed
+  835 |               )}
+  836 |             >
+> 837 |               <Cpu className="h-4 w-4", !sidebarCollapsed && "mr-2")} />
+      |                                       ^
+  838 |               {!sidebarCollapsed && "Model Config"}
+  839 |             </Button>
+  840 |           </nav>
+
+Expected '</', got ','
+
+Import traces:
+  Client Component Browser:
+    ./components/wafer-detection-dashboard.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/wafer-detection-dashboard.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Server Component]
+[02:43:12.246] Browser ERROR   ./components/wafer-detection-dashboard.tsx:837:39
+Parsing ecmascript source code failed
+  835 |               )}
+  836 |             >
+> 837 |               <Cpu className="h-4 w-4", !sidebarCollapsed && "mr-2")} />
+      |                                       ^
+  838 |               {!sidebarCollapsed && "Model Config"}
+  839 |             </Button>
+  840 |           </nav>
+
+Expected '</', got ','
+
+Import traces:
+  Client Component Browser:
+    ./components/wafer-detection-dashboard.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/wafer-detection-dashboard.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Server Component]
+[02:43:12.247] Browser ERROR   ./components/wafer-detection-dashboard.tsx:837:39
+Parsing ecmascript source code failed
+  835 |               )}
+  836 |             >
+> 837 |               <Cpu className="h-4 w-4", !sidebarCollapsed && "mr-2")} />
+      |                                       ^
+  838 |               {!sidebarCollapsed && "Model Config"}
+  839 |             </Button>
+  840 |           </nav>
+
+Expected '</', got ','
+
+Import traces:
+  Client Component Browser:
+    ./components/wafer-detection-dashboard.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Client Component Browser]
+    ./app/analysis/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/wafer-detection-dashboard.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Client Component SSR]
+    ./app/analysis/page.tsx [Server Component]
+[02:43:35.712] Server  LOG      ✓ Compiled in 424ms
+[02:44:14.199] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:44:14.363] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[02:44:14.363] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/analysis","route":"/analysis"}
+[02:44:14.363] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analysis color: rgb(120, 120, 120) color: inherit {"dp":"/analysis","o":"http://localhost:3000/analysis","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766317248934}
+[02:46:00.574] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766317355138}
+[02:46:59.449] Server  LOG      ✓ Compiled in 510ms
+[02:50:56.324] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analysis color: rgb(120, 120, 120) color: inherit {"dp":"/analysis","o":"http://localhost:3000/analysis","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766317650894}
+[02:57:21.636] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:57:21.836] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[02:57:21.836] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[02:57:21.836] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766318036401}
+[03:11:07.184] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:11:07.350] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[03:11:07.350] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/analysis","route":"/analysis"}
+[03:11:07.350] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analysis color: rgb(120, 120, 120) color: inherit {"dp":"/analysis","o":"http://localhost:3000/analysis","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766318861919}
+[03:11:42.586] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:11:42.723] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[03:11:42.723] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/analysis","route":"/analysis"}
+[03:11:42.723] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analysis color: rgb(120, 120, 120) color: inherit {"dp":"/analysis","o":"http://localhost:3000/analysis","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766318897298}
+[03:16:17.505] Server  LOG      ✓ Compiled in 961ms
+[03:20:05.349] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:20:05.495] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[03:20:05.495] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/analytics","route":"/analytics"}
+[03:20:05.495] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analytics color: rgb(120, 120, 120) color: inherit {"dp":"/analytics","o":"http://localhost:3000/analytics","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766319400068}
+[03:20:14.265] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analysis color: rgb(120, 120, 120) color: inherit {"dp":"/analysis","o":"http://localhost:3000/analysis","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766319408833}
+[03:32:31.682] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:32:31.846] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[03:32:31.846] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/analysis","route":"/analysis"}
+[03:32:31.846] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analysis color: rgb(120, 120, 120) color: inherit {"dp":"/analysis","o":"http://localhost:3000/analysis","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766320146421}
+[03:32:51.828] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:32:51.984] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[03:32:51.984] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/analytics","route":"/analytics"}
+[03:32:51.984] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analytics color: rgb(120, 120, 120) color: inherit {"dp":"/analytics","o":"http://localhost:3000/analytics","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766320166559}
+[03:33:07.263] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:33:07.392] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[03:33:07.392] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/analysis","route":"/analysis"}
+[03:33:07.392] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analysis color: rgb(120, 120, 120) color: inherit {"dp":"/analysis","o":"http://localhost:3000/analysis","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766320181965}
+[03:33:33.028] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:33:33.162] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[03:33:33.162] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/analytics","route":"/analytics"}
+[03:33:33.162] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analytics color: rgb(120, 120, 120) color: inherit {"dp":"/analytics","o":"http://localhost:3000/analytics","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766320207732}
+[03:34:43.708] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:34:43.935] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[03:34:43.935] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[03:34:43.935] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766320278510}
+[03:34:45.049] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analysis color: rgb(120, 120, 120) color: inherit {"dp":"/analysis","o":"http://localhost:3000/analysis","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766320279624}
+[03:35:38.655] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:35:38.783] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[03:35:38.783] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/analytics","route":"/analytics"}
+[03:35:38.783] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analytics color: rgb(120, 120, 120) color: inherit {"dp":"/analytics","o":"http://localhost:3000/analytics","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766320333357}
+[03:38:02.696] Server  LOG      ✓ Compiled in 545ms
+[03:38:59.821] Server  LOG      ✓ Compiled in 401ms
+[03:39:01.789] Browser ERROR   ./app/analytics/page.tsx:63:15
+Parsing ecmascript source code failed
+  61 |     return (
+  62 |         {/* Summary Cards */ }
+> 63 |         < div className = "grid md:grid-cols-3 gap-4 mb-8" >
+     |               ^^^^^^^^^
+  64 |                 <Card>
+  65 |                     <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+  66 |                         <CardTitle className="text-sm font-medium">Total Analyzed</CardTitle>
+
+Expected ',', got 'className'
+
+Import traces:
+  Client Component Browser:
+    ./app/analytics/page.tsx [Client Component Browser]
+    ./app/analytics/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/analytics/page.tsx [Client Component SSR]
+    ./app/analytics/page.tsx [Server Component]
+[03:39:01.791] Browser ERROR   ./app/analytics/page.tsx:63:15
+Parsing ecmascript source code failed
+  61 |     return (
+  62 |         {/* Summary Cards */ }
+> 63 |         < div className = "grid md:grid-cols-3 gap-4 mb-8" >
+     |               ^^^^^^^^^
+  64 |                 <Card>
+  65 |                     <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+  66 |                         <CardTitle className="text-sm font-medium">Total Analyzed</CardTitle>
+
+Expected ',', got 'className'
+
+Import traces:
+  Client Component Browser:
+    ./app/analytics/page.tsx [Client Component Browser]
+    ./app/analytics/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/analytics/page.tsx [Client Component SSR]
+    ./app/analytics/page.tsx [Server Component]
+[03:39:03.242] Browser ERROR   ./app/analytics/page.tsx:63:15
+Parsing ecmascript source code failed
+  61 |     return (
+  62 |         {/* Summary Cards */ }
+> 63 |         < div className = "grid md:grid-cols-3 gap-4 mb-8" >
+     |               ^^^^^^^^^
+  64 |                 <Card>
+  65 |                     <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+  66 |                         <CardTitle className="text-sm font-medium">Total Analyzed</CardTitle>
+
+Expected ',', got 'className'
+
+Import traces:
+  Client Component Browser:
+    ./app/analytics/page.tsx [Client Component Browser]
+    ./app/analytics/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/analytics/page.tsx [Client Component SSR]
+    ./app/analytics/page.tsx [Server Component]
+[03:39:03.243] Browser ERROR   ./app/analytics/page.tsx:63:15
+Parsing ecmascript source code failed
+  61 |     return (
+  62 |         {/* Summary Cards */ }
+> 63 |         < div className = "grid md:grid-cols-3 gap-4 mb-8" >
+     |               ^^^^^^^^^
+  64 |                 <Card>
+  65 |                     <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+  66 |                         <CardTitle className="text-sm font-medium">Total Analyzed</CardTitle>
+
+Expected ',', got 'className'
+
+Import traces:
+  Client Component Browser:
+    ./app/analytics/page.tsx [Client Component Browser]
+    ./app/analytics/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/analytics/page.tsx [Client Component SSR]
+    ./app/analytics/page.tsx [Server Component]
+[03:39:14.245] Browser ERROR   ./app/analytics/page.tsx:63:15
+Parsing ecmascript source code failed
+  61 |     return (
+  62 |         {/* Summary Cards */ }
+> 63 |         < div className = "grid md:grid-cols-3 gap-4 mb-8" >
+     |               ^^^^^^^^^
+  64 |                 <Card>
+  65 |                     <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+  66 |                         <CardTitle className="text-sm font-medium">Total Analyzed</CardTitle>
+
+Expected ',', got 'className'
+
+Import traces:
+  Client Component Browser:
+    ./app/analytics/page.tsx [Client Component Browser]
+    ./app/analytics/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/analytics/page.tsx [Client Component SSR]
+    ./app/analytics/page.tsx [Server Component]
+[03:39:14.248] Browser ERROR   ./app/analytics/page.tsx:63:15
+Parsing ecmascript source code failed
+  61 |     return (
+  62 |         {/* Summary Cards */ }
+> 63 |         < div className = "grid md:grid-cols-3 gap-4 mb-8" >
+     |               ^^^^^^^^^
+  64 |                 <Card>
+  65 |                     <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+  66 |                         <CardTitle className="text-sm font-medium">Total Analyzed</CardTitle>
+
+Expected ',', got 'className'
+
+Import traces:
+  Client Component Browser:
+    ./app/analytics/page.tsx [Client Component Browser]
+    ./app/analytics/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/analytics/page.tsx [Client Component SSR]
+    ./app/analytics/page.tsx [Server Component]
+[03:39:14.249] Browser ERROR   ./app/analytics/page.tsx:63:15
+Parsing ecmascript source code failed
+  61 |     return (
+  62 |         {/* Summary Cards */ }
+> 63 |         < div className = "grid md:grid-cols-3 gap-4 mb-8" >
+     |               ^^^^^^^^^
+  64 |                 <Card>
+  65 |                     <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+  66 |                         <CardTitle className="text-sm font-medium">Total Analyzed</CardTitle>
+
+Expected ',', got 'className'
+
+Import traces:
+  Client Component Browser:
+    ./app/analytics/page.tsx [Client Component Browser]
+    ./app/analytics/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/analytics/page.tsx [Client Component SSR]
+    ./app/analytics/page.tsx [Server Component]
+[03:39:14.251] Browser ERROR   ./app/analytics/page.tsx:63:15
+Parsing ecmascript source code failed
+  61 |     return (
+  62 |         {/* Summary Cards */ }
+> 63 |         < div className = "grid md:grid-cols-3 gap-4 mb-8" >
+     |               ^^^^^^^^^
+  64 |                 <Card>
+  65 |                     <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+  66 |                         <CardTitle className="text-sm font-medium">Total Analyzed</CardTitle>
+
+Expected ',', got 'className'
+
+Import traces:
+  Client Component Browser:
+    ./app/analytics/page.tsx [Client Component Browser]
+    ./app/analytics/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/analytics/page.tsx [Client Component SSR]
+    ./app/analytics/page.tsx [Server Component]
+[03:39:53.383] Server  LOG      ✓ Compiled in 1036ms
+[03:43:20.928] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766320795480}
+[03:43:40.896] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analysis color: rgb(120, 120, 120) color: inherit {"dp":"/analysis","o":"http://localhost:3000/analysis","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766320815469}
+[03:43:44.412] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:43:44.560] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[03:43:44.560] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/analytics","route":"/analytics"}
+[03:43:44.560] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analytics color: rgb(120, 120, 120) color: inherit {"dp":"/analytics","o":"http://localhost:3000/analytics","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766320819133}
+[03:43:56.787] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analysis color: rgb(120, 120, 120) color: inherit {"dp":"/analysis","o":"http://localhost:3000/analysis","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766320831362}
+[03:43:59.729] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766320834290}
+[03:44:07.453] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:44:07.669] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[03:44:07.669] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/analytics","route":"/analytics"}
+[03:44:07.669] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analytics color: rgb(120, 120, 120) color: inherit {"dp":"/analytics","o":"http://localhost:3000/analytics","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766320842178}
+[03:44:20.754] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766320855313}
+[03:45:23.067] Server  LOG      ✓ Compiled in 917ms
+[03:48:00.165] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analysis color: rgb(120, 120, 120) color: inherit {"dp":"/analysis","o":"http://localhost:3000/analysis","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766321074738}
+[03:48:15.104] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:48:15.259] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[03:48:15.259] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/analysis","route":"/analysis"}
+[03:48:15.259] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analysis color: rgb(120, 120, 120) color: inherit {"dp":"/analysis","o":"http://localhost:3000/analysis","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766321089825}
+[03:48:19.428] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:48:19.635] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[03:48:19.635] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[03:48:19.635] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766321094211}
+[03:49:46.206] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:49:46.349] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[03:49:46.349] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/analysis","route":"/analysis"}
+[03:49:46.349] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analysis color: rgb(120, 120, 120) color: inherit {"dp":"/analysis","o":"http://localhost:3000/analysis","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766321180926}

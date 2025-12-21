@@ -134,16 +134,21 @@ export function WaferDetectionDashboard({ onBack }: WaferDetectionDashboardProps
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false)
   const [uploadedImages, setUploadedImages] = useState<Array<{ id: string; url: string; file?: File; fileName: string }>>([])
   const [currentWaferId, setCurrentWaferId] = useState<string | null>(null)
+  const [selectedWafer, setSelectedWafer] = useState<WaferAnalysis | null>(null)
+  const [lotAnalysis, setLotAnalysis] = useState<LotAnalysis | null>(null)
+  const [showLotAnalysis, setShowLotAnalysis] = useState(false)
+
+  // Trend Analysis State
+  const [trendAnalysisResult, setTrendAnalysisResult] = useState<string>("")
+  const [isTrendAnalyzing, setIsTrendAnalyzing] = useState(false)
   const [isAnalyzing, setIsAnalyzing] = useState(false)
   const [waferAnalyses, setWaferAnalyses] = useState<WaferAnalysis[]>([])
-  const [showLotAnalysis, setShowLotAnalysis] = useState(false)
   const [analysisComplete, setAnalysisComplete] = useState(false)
   const [fullProbDist, setFullProbDist] = useState<Record<string, number>>({})
   const [explanation, setExplanation] = useState<string>("")
 
   // New state for defect grouping and individual view
   const [selectedDefectFilter, setSelectedDefectFilter] = useState<DefectPattern | "all">("all")
-  const [selectedWafer, setSelectedWafer] = useState<WaferAnalysis | null>(null)
   const [viewMode, setViewMode] = useState<"summary" | "grouped" | "individual">("summary")
 
   const [agentResults, setAgentResults] = useState<AgentResult[]>([
@@ -185,7 +190,6 @@ export function WaferDetectionDashboard({ onBack }: WaferDetectionDashboardProps
     },
   ])
 
-  const [lotAnalysis, setLotAnalysis] = useState<LotAnalysis | null>(null)
 
   const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const files = event.target.files
@@ -364,7 +368,7 @@ export function WaferDetectionDashboard({ onBack }: WaferDetectionDashboardProps
     // Get top defect patterns for recommendations
     const topDefects = defectDistribution.slice(0, 2)
 
-    setLotAnalysis({
+    const lotData: LotAnalysis = {
       lotId: `LOT-${Math.floor(Math.random() * 1000) + 1}`,
       totalWafers: analyses.length,
       defectiveWafers: totalDefects,
@@ -385,7 +389,38 @@ export function WaferDetectionDashboard({ onBack }: WaferDetectionDashboardProps
         action: "Continue standard monitoring",
         estimatedImpact: "Maintain current yield",
       }],
-    })
+    }
+    setLotAnalysis(lotData)
+
+    // Auto-switch to grouped view when lot analysis is active
+    setViewMode("grouped")
+
+    // Trigger Trend Analysis
+    const distributionForTrend = Object.fromEntries(patternCounts.entries());
+    fetchTrendAnalysis(distributionForTrend)
+  }
+
+  const fetchTrendAnalysis = async (distribution: Record<string, number>) => {
+    setIsTrendAnalyzing(true)
+    try {
+      const response = await fetch('http://localhost:8000/api/analyze-lot', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ defectDistribution: distribution })
+      })
+
+      if (response.ok) {
+        const data = await response.json()
+        setTrendAnalysisResult(data.analysis)
+      } else {
+        setTrendAnalysisResult("Unable to generate trend analysis.")
+      }
+    } catch (e) {
+      console.error("Trend analysis failed", e)
+      setTrendAnalysisResult("Error connecting to Trend Agent.")
+    } finally {
+      setIsTrendAnalyzing(false)
+    }
   }
 
   // Generate formatted text report for download
@@ -741,11 +776,11 @@ ${separator}
   }
 
   return (
-    <div className="flex min-h-screen bg-background-darker text-text-primary">
+    <div className="flex min-h-screen bg-background">
       {/* Sidebar */}
       <aside
         className={cn(
-          "fixed left-0 top-0 h-screen border-r border-white/10 bg-background-card/50 backdrop-blur-xl transition-all duration-300 z-10",
+          "fixed left-0 top-0 h-screen border-r border-border bg-sidebar transition-all duration-300 z-10",
           sidebarCollapsed ? "w-16" : "w-64",
         )}
       >
@@ -757,8 +792,8 @@ ${separator}
               </div>
               {!sidebarCollapsed && (
                 <div>
-                  <h1 className="text-lg font-bold text-text-primary">WaferDetect</h1>
-                  <p className="text-xs text-text-primary/60">v24.1 Enterprise</p>
+                  <h1 className="text-lg font-bold text-sidebar-foreground">WaferDetect</h1>
+                  <p className="text-xs text-sidebar-foreground/60">v24.1 Enterprise</p>
                 </div>
               )}
             </div>
@@ -770,7 +805,7 @@ ${separator}
                 variant="ghost"
                 onClick={onBack}
                 className={cn(
-                  "w-full text-text-secondary hover:text-text-primary hover:bg-white/5 mb-4",
+                  "w-full text-sidebar-foreground hover:text-sidebar-foreground hover:bg-sidebar-accent mb-4",
                   sidebarCollapsed ? "justify-center px-0" : "justify-start",
                 )}
               >
@@ -780,7 +815,7 @@ ${separator}
             )}
             <Button
               variant="secondary"
-              className={cn("w-full bg-primary/10 text-primary hover:bg-primary/20", sidebarCollapsed ? "justify-center px-0" : "justify-start")}
+              className={cn("w-full", sidebarCollapsed ? "justify-center px-0" : "justify-start")}
             >
               <Activity className={cn("h-4 w-4", !sidebarCollapsed && "mr-2")} />
               {!sidebarCollapsed && "Dashboard"}
@@ -788,7 +823,7 @@ ${separator}
             <Button
               variant="ghost"
               className={cn(
-                "w-full text-text-primary hover:text-text-primary hover:bg-white/5",
+                "w-full text-sidebar-foreground hover:text-sidebar-foreground hover:bg-sidebar-accent",
                 sidebarCollapsed ? "justify-center px-0" : "justify-start",
               )}
             >
@@ -797,8 +832,19 @@ ${separator}
             </Button>
             <Button
               variant="ghost"
+              onClick={() => window.location.href = '/analytics'}
               className={cn(
-                "w-full text-text-primary hover:text-text-primary hover:bg-white/5",
+                "w-full text-sidebar-foreground hover:text-sidebar-foreground hover:bg-sidebar-accent",
+                sidebarCollapsed ? "justify-center px-0" : "justify-start",
+              )}
+            >
+              <TrendingUp className={cn("h-4 w-4", !sidebarCollapsed && "mr-2")} />
+              {!sidebarCollapsed && "Analytics"}
+            </Button>
+            <Button
+              variant="ghost"
+              className={cn(
+                "w-full text-sidebar-foreground hover:text-sidebar-foreground hover:bg-sidebar-accent",
                 sidebarCollapsed ? "justify-center px-0" : "justify-start",
               )}
             >
@@ -812,9 +858,9 @@ ${separator}
               <>
                 <div className="flex items-center gap-2 text-sm">
                   <div className="h-2 w-2 rounded-full bg-chart-4 animate-pulse" />
-                  <span className="text-text-primary/80">System Operational</span>
+                  <span className="text-sidebar-foreground/80">System Operational</span>
                 </div>
-                <p className="text-xs text-text-primary/60 mt-1">All agents online</p>
+                <p className="text-xs text-sidebar-foreground/60 mt-1">All agents online</p>
               </>
             )}
             {sidebarCollapsed && (
@@ -966,31 +1012,232 @@ ${separator}
           </CardContent>
         </Card>
 
+        {/* Lot Analysis Section (Prioritized) */}
+        {showLotAnalysis && lotAnalysis && (
+          <div className="mb-8">
+            <h3 className="text-2xl font-bold mb-4">Lot-Level Analysis</h3>
+
+            {/* Statistics Overview */}
+            <div className="grid md:grid-cols-4 gap-4 mb-6">
+              <Card>
+                <CardContent className="pt-6">
+                  <div className="flex items-center justify-between mb-2">
+                    <Package className="h-8 w-8 text-primary" />
+                    <span className="text-3xl font-bold">{lotAnalysis.totalWafers}</span>
+                  </div>
+                  <p className="text-sm text-muted-foreground">Total Wafers</p>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardContent className="pt-6">
+                  <div className="flex items-center justify-between mb-2">
+                    <AlertTriangle className="h-8 w-8 text-red-400" />
+                    <span className="text-3xl font-bold text-red-400">{lotAnalysis.defectiveWafers}</span>
+                  </div>
+                  <p className="text-sm text-muted-foreground">Defective Wafers</p>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardContent className="pt-6">
+                  <div className="flex items-center justify-between mb-2">
+                    <TrendingUp className="h-8 w-8 text-green-400" />
+                    <span className="text-3xl font-bold text-green-400">{lotAnalysis.yieldRate.toFixed(1)}%</span>
+                  </div>
+                  <p className="text-sm text-muted-foreground">Yield Rate</p>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardContent className="pt-6">
+                  <div className="flex items-center justify-between mb-2">
+                    <CheckCircle2 className="h-8 w-8 text-green-400" />
+                    <span className="text-3xl font-bold text-green-400">
+                      {lotAnalysis.totalWafers - lotAnalysis.defectiveWafers}
+                    </span>
+                  </div>
+                  <p className="text-sm text-muted-foreground">Pass Count</p>
+                </CardContent>
+              </Card>
+            </div>
+
+            <div className="grid lg:grid-cols-2 gap-6">
+              {/* Pareto Chart */}
+              <Card>
+                <CardHeader>
+                  <CardTitle>Defect Pattern Distribution</CardTitle>
+                  <CardDescription>
+                    Lot {lotAnalysis.lotId} - {lotAnalysis.totalWafers} wafers
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-3">
+                    {lotAnalysis.defectDistribution
+                      .sort((a, b) => b.count - a.count)
+                      .map((defect, idx) => {
+                        const percentage = (defect.count / lotAnalysis.totalWafers) * 100
+                        return (
+                          <div key={idx}>
+                            <div className="flex justify-between text-sm mb-1">
+                              <span className={cn("font-semibold", getPatternColor(defect.name))}>{defect.name}</span>
+                              <span className="font-mono text-muted-foreground">
+                                {defect.count} wafers ({percentage.toFixed(0)}%)
+                              </span>
+                            </div>
+                            <Progress value={percentage} className="h-2.5" />
+                          </div>
+                        )
+                      })}
+                  </div>
+
+                  <div className="mt-6 pt-4 border-t border-border">
+                    <div className="grid grid-cols-2 gap-4">
+                      <div>
+                        <p className="text-xs text-muted-foreground mb-1">Estimated Yield</p>
+                        <p className="text-2xl font-bold text-chart-4">{lotAnalysis.yieldRate.toFixed(1)}%</p>
+                      </div>
+                      <div>
+                        <p className="text-xs text-muted-foreground mb-1">Good Die Rate</p>
+                        <p className="text-2xl font-bold text-chart-4">~82%</p>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Systematic Issue Detection (LLM Powered) */}
+              <Card>
+                <CardHeader>
+                  <CardTitle>Systematic Issue Detection</CardTitle>
+                  <CardDescription>Trend analysis & recommendations</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  {isTrendAnalyzing ? (
+                    <div className="flex flex-col items-center justify-center py-8 space-y-4">
+                      <div className="h-8 w-8 rounded-full border-4 border-primary border-t-transparent animate-spin" />
+                      <p className="text-sm text-muted-foreground animate-pulse">Running Root Cause Analysis...</p>
+                    </div>
+                  ) : trendAnalysisResult ? (
+                    <div className="space-y-4">
+                      <div className={cn(
+                        "p-4 rounded-lg border",
+                        trendAnalysisResult.includes("NO DEFECTS") ? "bg-green-500/10 border-green-500/30" : "bg-destructive/10 border-destructive/30"
+                      )}>
+                        <h4 className={cn(
+                          "font-bold flex items-center gap-2 mb-2",
+                          trendAnalysisResult.includes("NO DEFECTS") ? "text-green-400" : "text-destructive"
+                        )}>
+                          {trendAnalysisResult.includes("NO DEFECTS") ? <CheckCircle2 className="h-5 w-5" /> : <AlertTriangle className="h-5 w-5" />}
+                          Analysis Result
+                        </h4>
+                        <pre className="text-sm whitespace-pre-wrap font-sans text-foreground/90">
+                          {trendAnalysisResult}
+                        </pre>
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="p-4 rounded-lg border border-destructive/30 bg-destructive/10">
+                      <h4 className="font-bold text-destructive mb-1 flex items-center gap-2">
+                        <AlertTriangle className="h-4 w-4" />
+                        Systematic Issue Detected
+                      </h4>
+                      <p className="text-sm text-muted-foreground mb-3">
+                        Multiple wafers in this lot share the same defect pattern, indicating a systemic problem.
+                      </p>
+                    </div>
+                  )}
+
+                  {!isTrendAnalyzing && (
+                    <div className="mt-4 p-4 rounded-lg bg-secondary/50 border border-border">
+                      <h4 className="font-semibold mb-2">Priority Actions</h4>
+                      <ul className="space-y-2 text-sm">
+                        <li className="flex items-start gap-2">
+                          <span className="text-primary mt-0.5">•</span>
+                          <span>Auto-generated based on defect distribution via LLM agent.</span>
+                        </li>
+                      </ul>
+                    </div>
+                  )}
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        )}
+
+        {/* Results Overview (Cards Hidden if Lot Analysis Active) */}
+        {!showLotAnalysis && (
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4 mb-8">
+            <Card>
+              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+                <CardTitle className="text-sm font-medium">Total Wafers</CardTitle>
+                <Package className="h-4 w-4 text-muted-foreground" />
+              </CardHeader>
+              <CardContent>
+                <div className="text-2xl font-bold">{uploadedImages.length}</div>
+                <p className="text-xs text-muted-foreground">
+                  {isAnalyzing ? "Analyzing..." : `${waferAnalyses.length} analyzed`}
+                </p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+                <CardTitle className="text-sm font-medium">Passed</CardTitle>
+                <CheckCircle2 className="h-4 w-4 text-green-500" />
+              </CardHeader>
+              <CardContent>
+                <div className="text-2xl font-bold text-green-500">
+                  {waferAnalyses.filter((w) => w.finalVerdict === "PASS").length}
+                </div>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+                <CardTitle className="text-sm font-medium">Defective</CardTitle>
+                <AlertTriangle className="h-4 w-4 text-destructive" />
+              </CardHeader>
+              <CardContent>
+                <div className="text-2xl font-bold text-destructive">
+                  {waferAnalyses.filter((w) => w.finalVerdict === "FAIL").length}
+                </div>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+                <CardTitle className="text-sm font-medium">Yield Rate</CardTitle>
+                <TrendingUp className="h-4 w-4 text-primary" />
+              </CardHeader>
+              <CardContent>
+                <div className="text-2xl font-bold">
+                  {waferAnalyses.length > 0
+                    ? (
+                      (waferAnalyses.filter((w) => w.finalVerdict === "PASS").length / waferAnalyses.length) *
+                      100
+                    ).toFixed(1)
+                    : "0.0"}
+                  %
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        )}
+
+        {/* Analysis Results Section */}
         {waferAnalyses.length > 0 && (
-          <>
-            {/* View Mode Selector */}
-            <div className="flex items-center justify-between mb-6">
-              <h3 className="text-2xl font-bold">Analysis Results</h3>
-              <div className="flex gap-2">
-                <Button
-                  variant={viewMode === "summary" ? "default" : "outline"}
-                  onClick={() => { setViewMode("summary"); setSelectedWafer(null); }}
-                  size="sm"
-                >
-                  Summary
-                </Button>
-                <Button
-                  variant={viewMode === "grouped" ? "default" : "outline"}
-                  onClick={() => { setViewMode("grouped"); setSelectedWafer(null); }}
-                  size="sm"
-                >
-                  By Defect Type
-                </Button>
-              </div>
+          <div className="mb-8">
+            <div className="flex items-center justify-between mb-4">
+              <h2 className="text-2xl font-bold">Analysis Results</h2>
+              {!showLotAnalysis && (
+                <div className="flex gap-2">
+                  <Button variant="outline" size="sm" onClick={() => setViewMode("summary")}>
+                    Summary
+                  </Button>
+                  <Button variant="outline" size="sm" onClick={() => setViewMode("grouped")}>
+                    By Defect Type
+                  </Button>
+                </div>
+              )}
             </div>
 
             {/* Summary View */}
-            {viewMode === "summary" && !selectedWafer && (
+            {viewMode === "summary" && !selectedWafer && !showLotAnalysis && (
               <div className="grid md:grid-cols-4 gap-4 mb-8">
                 <Card className="cursor-pointer hover:border-primary transition-colors" onClick={() => setViewMode("grouped")}>
                   <CardContent className="pt-6">
@@ -1367,136 +1614,10 @@ ${separator}
                 </Card>
               </div>
             )}
-          </>
+          </div>
         )}
-        {/* Lot Analysis */}
-        {showLotAnalysis && lotAnalysis && (
-          <>
-            <h3 className="text-2xl font-bold mb-4">Lot-Level Analysis</h3>
-
-            {/* Statistics Overview */}
-            <div className="grid md:grid-cols-4 gap-4 mb-6">
-              <Card>
-                <CardContent className="pt-6">
-                  <div className="flex items-center justify-between mb-2">
-                    <Package className="h-8 w-8 text-primary" />
-                    <span className="text-3xl font-bold">{lotAnalysis.totalWafers}</span>
-                  </div>
-                  <p className="text-sm text-muted-foreground">Total Wafers</p>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardContent className="pt-6">
-                  <div className="flex items-center justify-between mb-2">
-                    <AlertTriangle className="h-8 w-8 text-red-400" />
-                    <span className="text-3xl font-bold text-red-400">{lotAnalysis.defectiveWafers}</span>
-                  </div>
-                  <p className="text-sm text-muted-foreground">Defective Wafers</p>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardContent className="pt-6">
-                  <div className="flex items-center justify-between mb-2">
-                    <TrendingUp className="h-8 w-8 text-green-400" />
-                    <span className="text-3xl font-bold text-green-400">{lotAnalysis.yieldRate.toFixed(1)}%</span>
-                  </div>
-                  <p className="text-sm text-muted-foreground">Yield Rate</p>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardContent className="pt-6">
-                  <div className="flex items-center justify-between mb-2">
-                    <CheckCircle2 className="h-8 w-8 text-green-400" />
-                    <span className="text-3xl font-bold text-green-400">
-                      {lotAnalysis.totalWafers - lotAnalysis.defectiveWafers}
-                    </span>
-                  </div>
-                  <p className="text-sm text-muted-foreground">Pass Count</p>
-                </CardContent>
-              </Card>
-            </div>
-
-            <div className="grid lg:grid-cols-2 gap-6">
-              {/* Pareto Chart */}
-              <Card>
-                <CardHeader>
-                  <CardTitle>Defect Pattern Distribution</CardTitle>
-                  <CardDescription>
-                    Lot {lotAnalysis.lotId} - {lotAnalysis.totalWafers} wafers
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-3">
-                    {lotAnalysis.defectDistribution
-                      .sort((a, b) => b.count - a.count)
-                      .map((defect, idx) => {
-                        const percentage = (defect.count / lotAnalysis.totalWafers) * 100
-                        return (
-                          <div key={idx}>
-                            <div className="flex justify-between text-sm mb-1">
-                              <span className={cn("font-semibold", getPatternColor(defect.name))}>{defect.name}</span>
-                              <span className="font-mono text-muted-foreground">
-                                {defect.count} wafers ({percentage.toFixed(0)}%)
-                              </span>
-                            </div>
-                            <Progress value={percentage} className="h-2.5" />
-                          </div>
-                        )
-                      })}
-                  </div>
-
-                  <div className="mt-6 pt-4 border-t border-border">
-                    <div className="grid grid-cols-2 gap-4">
-                      <div>
-                        <p className="text-xs text-muted-foreground mb-1">Estimated Yield</p>
-                        <p className="text-2xl font-bold text-chart-4">{lotAnalysis.yieldRate.toFixed(1)}%</p>
-                      </div>
-                      <div>
-                        <p className="text-xs text-muted-foreground mb-1">Good Die Rate</p>
-                        <p className="text-2xl font-bold text-chart-4">~82%</p>
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Trend Summary */}
-              <Card>
-                <CardHeader>
-                  <CardTitle>Systematic Issue Detection</CardTitle>
-                  <CardDescription>Trend analysis & recommendations</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  {lotAnalysis.systematicIssues.length > 0 && (
-                    <div className="mb-4 p-3 bg-destructive/10 border border-destructive/30 rounded-lg flex items-start gap-3">
-                      <AlertTriangle className="h-5 w-5 text-destructive mt-0.5 flex-shrink-0" />
-                      <div>
-                        <p className="text-sm font-semibold text-destructive mb-1">Systematic Issue Detected</p>
-                        <p className="text-xs text-muted-foreground">
-                          Multiple wafers in this lot share the same defect pattern, indicating a systemic problem.
-                        </p>
-                      </div>
-                    </div>
-                  )}
-
-                  <div className="p-4 bg-secondary/50 rounded-lg">
-                    <p className="text-sm font-semibold mb-2">Priority Actions</p>
-                    <ul className="space-y-2">
-                      {lotAnalysis.recommendations.map((rec, idx) => (
-                        <li key={idx} className="text-sm text-foreground flex gap-2">
-                          <span className="text-accent font-bold">{idx + 1}.</span>
-                          <span>{rec.action}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </>
-        )}
-
       </main>
     </div>
   )
 }
+

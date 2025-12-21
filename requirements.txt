@@ -38,3 +38,9 @@ opencv-python>=4.8
 fastapi>=0.104
 uvicorn>=0.24
 python-multipart>=0.0.6
+
+# =====================================
+# Database & Analytics dependencies
+# =====================================
+sqlalchemy>=2.0.23
+reportlab>=4.0.7

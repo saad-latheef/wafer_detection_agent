@@ -48,13 +48,13 @@ export default function HeroSection() {
                 >
                     <button
                         onClick={() => router.push('/analysis')}
-                        className="bg-primary hover:bg-primary-dark text-background px-8 py-4 rounded-lg font-semibold text-lg transition glow-cyan flex items-center gap-2 group"
+                        className="bg-primary-cyan hover:bg-primary-dark text-background px-8 py-4 rounded-lg font-semibold text-lg transition glow-cyan flex items-center gap-2 group"
                     >
                         Analyze Wafer
                         <span className="group-hover:translate-x-1 transition-transform">→</span>
                     </button>
 
-                    <button className="border-2 border-primary text-primary hover:bg-primary/10 px-8 py-4 rounded-lg font-semibold text-lg transition flex items-center gap-2">
+                    <button className="border-2 border-primary-cyan text-primary-cyan hover:bg-primary-cyan/10 px-8 py-4 rounded-lg font-semibold text-lg transition flex items-center gap-2">
                         <PlayCircle className="w-5 h-5" />
                         View Demo
                     </button>

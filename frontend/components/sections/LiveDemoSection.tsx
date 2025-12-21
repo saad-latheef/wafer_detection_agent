@@ -6,7 +6,7 @@ import Image from "next/image";
 import { ArrowDown, Upload, Zap, Crosshair, Shield } from "lucide-react";
 // ...
 {/* Pulsing Arrow Animation */ }
-<div className="flex flex-col items-center gap-2 animate-bounce text-primary/80">
+<div className="flex flex-col items-center gap-2 animate-bounce text-primary-cyan/80">
     <span className="text-xs font-medium uppercase tracking-widest opacity-70">Start Here</span>
     <ArrowDown className="w-6 h-6" />
 </div>
@@ -42,9 +42,9 @@ export default function LiveDemoSection({ onStartAnalysis }: LiveDemoSectionProp
                 className="relative z-10 mx-auto flex max-w-4xl flex-col items-center px-4 text-center"
             >
                 {/* Badge */}
-                <div className="mb-6 inline-flex items-center rounded-full border border-primary/20 bg-primary/5 px-3 py-1 backdrop-blur-md">
-                    <span className="flex size-2 rounded-full bg-primary animate-pulse mr-2"></span>
-                    <span className="text-xs font-semibold uppercase tracking-wider text-primary">Live Demo Available</span>
+                <div className="mb-6 inline-flex items-center rounded-full border border-primary-cyan/20 bg-primary-cyan/5 px-3 py-1 backdrop-blur-md">
+                    <span className="flex size-2 rounded-full bg-primary-cyan animate-pulse mr-2"></span>
+                    <span className="text-xs font-semibold uppercase tracking-wider text-primary-cyan">Live Demo Available</span>
                 </div>
 
                 {/* Heading */}
@@ -60,7 +60,7 @@ export default function LiveDemoSection({ onStartAnalysis }: LiveDemoSectionProp
                 {/* Interactive Area */}
                 <div className="flex flex-col items-center justify-center gap-4">
                     {/* Pulsing Arrow Animation */}
-                    <div className="flex flex-col items-center gap-2 animate-bounce text-primary/80">
+                    <div className="flex flex-col items-center gap-2 animate-bounce text-primary-cyan/80">
                         <span className="text-xs font-medium uppercase tracking-widest opacity-70">Start Here</span>
                         <ArrowDown className="w-6 h-6" />
                     </div>
@@ -68,7 +68,7 @@ export default function LiveDemoSection({ onStartAnalysis }: LiveDemoSectionProp
                     {/* CTA Button */}
                     <button
                         onClick={onStartAnalysis}
-                        className="group relative flex h-14 min-w-[200px] cursor-pointer items-center justify-center overflow-hidden rounded-xl bg-primary px-8 text-base font-bold text-background shadow-[0_0_20px_rgba(0,212,255,0.2)] transition-all hover:scale-105 hover:bg-primary-dark hover:shadow-[0_0_40px_rgba(0,212,255,0.4)] focus:outline-none focus:ring-4 focus:ring-primary/30"
+                        className="group relative flex h-14 min-w-[200px] cursor-pointer items-center justify-center overflow-hidden rounded-xl bg-primary-cyan px-8 text-base font-bold text-background shadow-[0_0_20px_rgba(0,212,255,0.2)] transition-all hover:scale-105 hover:bg-primary-dark hover:shadow-[0_0_40px_rgba(0,212,255,0.4)] focus:outline-none focus:ring-4 focus:ring-primary-cyan/30"
                     >
                         <Upload className="mr-2 w-5 h-5 transition-transform group-hover:-translate-y-1" />
                         <span className="relative z-10">Analyze Wafer</span>
@@ -89,9 +89,9 @@ export default function LiveDemoSection({ onStartAnalysis }: LiveDemoSectionProp
                         initial={{ opacity: 0, y: 20 }}
                         animate={isInView ? { opacity: 1, y: 0 } : {}}
                         transition={{ duration: 0.6, delay: 0.2 }}
-                        className="rounded-2xl border border-white/5 bg-background-card p-8 backdrop-blur-sm transition-colors hover:border-primary/30"
+                        className="rounded-2xl border border-white/5 bg-background-card p-8 backdrop-blur-sm transition-colors hover:border-primary-cyan/30"
                     >
-                        <div className="mb-4 inline-flex rounded-lg bg-primary/20 p-3 text-primary">
+                        <div className="mb-4 inline-flex rounded-lg bg-primary-cyan/20 p-3 text-primary-cyan">
                             <Zap className="w-6 h-6" />
                         </div>
                         <h3 className="mb-2 text-xl font-bold text-white">Real-time Analysis</h3>
@@ -103,9 +103,9 @@ export default function LiveDemoSection({ onStartAnalysis }: LiveDemoSectionProp
                         initial={{ opacity: 0, y: 20 }}
                         animate={isInView ? { opacity: 1, y: 0 } : {}}
                         transition={{ duration: 0.6, delay: 0.4 }}
-                        className="rounded-2xl border border-white/5 bg-background-card p-8 backdrop-blur-sm transition-colors hover:border-primary/30"
+                        className="rounded-2xl border border-white/5 bg-background-card p-8 backdrop-blur-sm transition-colors hover:border-primary-cyan/30"
                     >
-                        <div className="mb-4 inline-flex rounded-lg bg-primary/20 p-3 text-primary">
+                        <div className="mb-4 inline-flex rounded-lg bg-primary-cyan/20 p-3 text-primary-cyan">
                             <Crosshair className="w-6 h-6" />
                         </div>
                         <h3 className="mb-2 text-xl font-bold text-white">Sub-micron Accuracy</h3>
@@ -117,9 +117,9 @@ export default function LiveDemoSection({ onStartAnalysis }: LiveDemoSectionProp
                         initial={{ opacity: 0, y: 20 }}
                         animate={isInView ? { opacity: 1, y: 0 } : {}}
                         transition={{ duration: 0.6, delay: 0.6 }}
-                        className="rounded-2xl border border-white/5 bg-background-card p-8 backdrop-blur-sm transition-colors hover:border-primary/30"
+                        className="rounded-2xl border border-white/5 bg-background-card p-8 backdrop-blur-sm transition-colors hover:border-primary-cyan/30"
                     >
-                        <div className="mb-4 inline-flex rounded-lg bg-primary/20 p-3 text-primary">
+                        <div className="mb-4 inline-flex rounded-lg bg-primary-cyan/20 p-3 text-primary-cyan">
                             <Shield className="w-6 h-6" />
                         </div>
                         <h3 className="mb-2 text-xl font-bold text-white">Enterprise Security</h3>

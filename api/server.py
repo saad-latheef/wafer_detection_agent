@@ -21,6 +21,18 @@ from agents.ingestion_agent import ingest_image
 from agents.ml_agent import run_ml_inference
 from agents.analysis_agent import analyze_results
 from agents.explanation_agent import generate_explanation
+from agents.trend_agent import analyze_trend
+
+# Database imports
+import sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from backend.models import get_db, Lot, Wafer, DefectDistribution
+from sqlalchemy.orm import Session
+from datetime import datetime
+
+# Extend WaferContext to support trend analysis
+WaferContext.defect_distribution = {}
+WaferContext.trend_analysis = ""
 
 app = FastAPI(title="Wafer Detection Agent API")
 
@@ -103,6 +115,14 @@ class AnalysisResponse(BaseModel):
     # Processing info
     modelUsed: str
     deviceUsed: str
+
+
+class LotAnalysisRequest(BaseModel):
+    defectDistribution: Dict[str, int]
+
+
+class LotAnalysisResponse(BaseModel):
+    analysis: str
 
 
 # Root cause mappings
@@ -220,8 +240,134 @@ TRIGGER_ACTIONS = {
 }
 
 
+@app.post("/api/analyze-lot", response_model=LotAnalysisResponse)
+async def analyze_lot(request: LotAnalysisRequest):
+    context = WaferContext(image_path="LOT_LEVEL_ANALYSIS")
+    context.defect_distribution = request.defectDistribution
+    
+    # Run trend agent
+    analyze_trend(context)
+    
+    return LotAnalysisResponse(analysis=context.trend_analysis)
+
+
+@app.get("/api/trends")
+async def get_trends(start_date: str = "", end_date: str = "", group_by: str = "day"):
+    """
+    Get historical trend data for defect rates over time.
+    Returns time-series data grouped by day/week/month.
+    """
+    from datetime import datetime, timedelta
+    
+    db = next(get_db())
+    try:
+        # Default to last 30 days if no date range specified
+        if not end_date:
+            end_dt = datetime.utcnow()
+        else:
+            end_dt = datetime.fromisoformat(end_date)
+            
+        if not start_date:
+            start_dt = end_dt - timedelta(days=30)
+        else:
+            start_dt = datetime.fromisoformat(start_date)
+        
+        # Query wafers in date range
+        wafers = db.query(Wafer).filter(
+            Wafer.analyzed_at >= start_dt,
+            Wafer.analyzed_at <= end_dt
+        ).all()
+        
+        # Group by date
+        trends = {}
+        for wafer in wafers:
+            date_key = wafer.analyzed_at.strftime("%Y-%m-%d")
+            if date_key not in trends:
+                trends[date_key] = {"total": 0, "defective": 0, "pass": 0}
+            
+            trends[date_key]["total"] += 1
+            if wafer.final_verdict == "FAIL":
+                trends[date_key]["defective"] += 1
+            else:
+                trends[date_key]["pass"] += 1
+        
+        # Calculate yield rates
+        result = []
+        for date, stats in sorted(trends.items()):
+            yield_rate = (stats["pass"] / stats["total"] * 100) if stats["total"] > 0 else 0
+            result.append({
+                "date": date,
+                "total_wafers": stats["total"],
+                "defective_wafers": stats["defective"],
+                "pass_wafers": stats["pass"],
+                "yield_rate": round(yield_rate, 2)
+            })
+        
+        return {"trends": result, "start_date": start_dt.isoformat(), "end_date": end_dt.isoformat()}
+    
+    finally:
+        db.close()
+
+
+@app.get("/api/equipment-correlation")
+async def get_equipment_correlation(tool_id: str = ""):
+    """
+    Get equipment correlation data showing defect rates by tool/chamber.
+    """
+    db = next(get_db())
+    try:
+        query = db.query(Wafer)
+        
+        # Filter by tool if specified
+        if tool_id:
+            query = query.filter(Wafer.tool_id == tool_id)
+        
+        wafers = query.all()
+        
+        # Group by tool
+        tool_stats = {}
+        for wafer in wafers:
+            tool = wafer.tool_id or "UNKNOWN"
+            if tool not in tool_stats:
+                tool_stats[tool] = {
+                    "total": 0,
+                    "defective": 0,
+                    "defect_breakdown": {}
+                }
+            
+            tool_stats[tool]["total"] += 1
+            if wafer.final_verdict == "FAIL":
+                tool_stats[tool]["defective"] += 1
+                
+                # Track defect types
+                pattern = wafer.predicted_class or "None"
+                if pattern not in tool_stats[tool]["defect_breakdown"]:
+                    tool_stats[tool]["defect_breakdown"][pattern] = 0
+                tool_stats[tool]["defect_breakdown"][pattern] += 1
+        
+        # Calculate defect rates
+        result = []
+        for tool, stats in tool_stats.items():
+            defect_rate = (stats["defective"] / stats["total"] * 100) if stats["total"] > 0 else 0
+            result.append({
+                "tool_id": tool,
+                "total_wafers": stats["total"],
+                "defective_wafers": stats["defective"],
+                "defect_rate": round(defect_rate, 2),
+                "defect_breakdown": stats["defect_breakdown"]
+            })
+        
+        # Sort by defect rate (descending)
+        result.sort(key=lambda x: x["defect_rate"], reverse=True)
+        
+        return {"equipment_data": result}
+    
+    finally:
+        db.close()
+
+
 @app.post("/api/analyze", response_model=AnalysisResponse)
-async def analyze_wafer(file: UploadFile = File(...)):
+async def analyze_wafer(file: UploadFile = File(...), tool_id: str = "", chamber_id: str = ""):
     if not file.filename.endswith('.npy'):
         raise HTTPException(status_code=400, detail="Only .npy files are supported")
     
@@ -352,6 +498,40 @@ async def analyze_wafer(file: UploadFile = File(...)):
                 actionSuggestions=ACTION_SUGGESTIONS.get(predicted, [])
             )
         ]
+        
+        # Save to database
+        db = next(get_db())
+        try:
+            # Create wafer record
+            wafer_record = Wafer(
+                wafer_id=f"W-{hash(file.filename) % 10000:04d}",
+                file_name=file.filename,
+                tool_id=tool_id or "UNKNOWN",
+                chamber_id=chamber_id or "UNKNOWN",
+                processed_at=datetime.utcnow(),
+                predicted_class=predicted,
+                confidence=confidence,
+                final_verdict="FAIL" if has_defect else "PASS",
+                severity=severity
+            )
+            db.add(wafer_record)
+            db.commit()
+            db.refresh(wafer_record)
+            
+            # Save defect distribution
+            for pattern, prob in prob_dist.items():
+                defect_dist = DefectDistribution(
+                    wafer_id=wafer_record.id,
+                    pattern=pattern,
+                    probability=prob
+                )
+                db.add(defect_dist)
+            db.commit()
+        except Exception as e:
+            print(f"Database save error: {e}")
+            db.rollback()
+        finally:
+            db.close()
         
         return AnalysisResponse(
             waferId=f"W-{hash(file.filename) % 10000:04d}",

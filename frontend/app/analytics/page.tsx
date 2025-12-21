@@ -2,8 +2,9 @@
 
 import { useEffect, useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
-import { TrendingUp, AlertTriangle, Package } from "lucide-react";
+import { TrendingUp, AlertTriangle, Package, FileText } from "lucide-react";
 import { AppSidebar } from "@/components/layout/AppSidebar";
 import { cn } from "@/lib/utils";
 
@@ -61,9 +62,35 @@ export default function AnalyticsPage() {
             <AppSidebar showBackButton={true} currentPage="analytics" />
             <div className={cn("transition-all duration-300", "ml-64")}>
                 <div className="container mx-auto p-8">
-                    <div className="mb-8">
-                        <h1 className="text-4xl font-bold mb-2">Analytics Dashboard</h1>
-                        <p className="text-muted-foreground">Histor ical trends and equipment performance insights</p>
+                    <div className="mb-8 flex items-center justify-between">
+                        <div>
+                            <h1 className="text-4xl font-bold mb-2">Analytics Dashboard</h1>
+                            <p className="text-muted-foreground">Historical trends and equipment performance insights</p>
+                        </div>
+                        <Button
+                            onClick={async () => {
+                                try {
+                                    const response = await fetch('http://localhost:8000/api/export-pdf');
+                                    if (!response.ok) throw new Error('Export failed');
+                                    const blob = await response.blob();
+                                    const url = window.URL.createObjectURL(blob);
+                                    const a = document.createElement('a');
+                                    a.href = url;
+                                    a.download = `analytics_report_${new Date().toISOString().split('T')[0]}.pdf`;
+                                    document.body.appendChild(a);
+                                    a.click();
+                                    window.URL.revokeObjectURL(url);
+                                    document.body.removeChild(a);
+                                } catch (error) {
+                                    console.error('Failed to download PDF:', error);
+                                }
+                            }}
+                            variant="outline"
+                            className="gap-2"
+                        >
+                            <FileText className="h-4 w-4" />
+                            Download Report
+                        </Button>
                     </div>
 
                     {/* Summary Cards */}
@@ -158,7 +185,7 @@ export default function AnalyticsPage() {
                                         <div className="flex justify-between items-center mb-2">
                                             <span className="font-semibold">{tool.tool_id}</span>
                                             <span className="text-sm text-muted-foreground">
-                                                {tool.defectivewafers}/{tool.total_wafers} defective
+                                                {tool.defective_wafers}/{tool.total_wafers} defective
                                             </span>
                                         </div>
                                         <div className="text-sm text-muted-foreground">

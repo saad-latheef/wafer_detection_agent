@@ -1015,7 +1015,54 @@ ${separator}
         {/* Lot Analysis Section (Prioritized) */}
         {showLotAnalysis && lotAnalysis && (
           <div className="mb-8">
-            <h3 className="text-2xl font-bold mb-4">Lot-Level Analysis</h3>
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="text-2xl font-bold">Lot-Level Analysis</h3>
+              <Button
+                onClick={async () => {
+                  try {
+                    const payload = {
+                      lot_stats: {
+                        total_wafers: lotAnalysis.totalWafers,
+                        defective_wafers: lotAnalysis.defectiveWafers,
+                        yield_rate: lotAnalysis.yieldRate,
+                        defect_distribution: lotAnalysis.defectDistribution.reduce((acc, curr) => {
+                          acc[curr.name] = curr.count;
+                          return acc;
+                        }, {} as Record<string, number>)
+                      },
+                      wafer_analyses: waferAnalyses
+                    };
+
+                    const response = await fetch('http://localhost:8000/api/export-lot-pdf', {
+                      method: 'POST',
+                      headers: {
+                        'Content-Type': 'application/json',
+                      },
+                      body: JSON.stringify(payload),
+                    });
+
+                    if (!response.ok) throw new Error('Export failed');
+
+                    const blob = await response.blob();
+                    const url = window.URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = `batch_report_${new Date().toISOString().split('T')[0]}.pdf`;
+                    document.body.appendChild(a);
+                    a.click();
+                    window.URL.revokeObjectURL(url);
+                    document.body.removeChild(a);
+                  } catch (error) {
+                    console.error('Failed to download PDF:', error);
+                  }
+                }}
+                variant="outline"
+                className="gap-2"
+              >
+                <FileText className="h-4 w-4" />
+                Download PDF Report
+              </Button>
+            </div>
 
             {/* Statistics Overview */}
             <div className="grid md:grid-cols-4 gap-4 mb-6">

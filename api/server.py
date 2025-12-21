@@ -29,6 +29,15 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from backend.models import get_db, Lot, Wafer, DefectDistribution
 from sqlalchemy.orm import Session
 from datetime import datetime
+from fastapi.responses import StreamingResponse
+
+# PDF import - conditional to handle potential import errors
+try:
+    from backend.pdf_generator import generate_wafer_report_pdf
+    PDF_AVAILABLE = True
+except ImportError as e:
+    print(f"PDF generation not available: {e}")
+    PDF_AVAILABLE = False
 
 # Extend WaferContext to support trend analysis
 WaferContext.defect_distribution = {}
@@ -361,6 +370,190 @@ async def get_equipment_correlation(tool_id: str = ""):
         result.sort(key=lambda x: x["defect_rate"], reverse=True)
         
         return {"equipment_data": result}
+    
+    finally:
+        db.close()
+
+
+@app.get("/api/search")
+async def search_wafers(
+    tool_id: str = "",
+    start_date: str = "",
+    end_date: str = "",
+    defect_type: str = "",
+    severity: str = ""
+):
+    """
+    Search and filter wafer analysis results.
+    """
+    from datetime import datetime, timedelta
+    
+    db = next(get_db())
+    try:
+        query = db.query(Wafer)
+        
+        # Apply filters
+        if tool_id:
+            query = query.filter(Wafer.tool_id == tool_id)
+        
+        if start_date:
+            start_dt = datetime.fromisoformat(start_date)
+            query = query.filter(Wafer.analyzed_at >= start_dt)
+        
+        if end_date:
+            end_dt = datetime.fromisoformat(end_date)
+            query = query.filter(Wafer.analyzed_at <= end_dt)
+        
+        if defect_type:
+            query = query.filter(Wafer.predicted_class == defect_type)
+        
+        if severity:
+            query = query.filter(Wafer.severity == severity)
+        
+        # Order by most recent first
+        wafers = query.order_by(Wafer.analyzed_at.desc()).limit(100).all()
+        
+        # Format results
+        results = []
+        for wafer in wafers:
+            results.append({
+                "wafer_id": wafer.wafer_id,
+                "file_name": wafer.file_name,
+                "tool_id": wafer.tool_id,
+                "chamber_id": wafer.chamber_id,
+                "analyzed_at": wafer.analyzed_at.isoformat() if wafer.analyzed_at else None,
+                "predicted_class": wafer.predicted_class,
+                "confidence": wafer.confidence,
+                "final_verdict": wafer.final_verdict,
+                "severity": wafer.severity
+            })
+        
+        return {"results": results, "count": len(results)}
+    
+    finally:
+        db.close()
+
+
+@app.get("/api/debug-pdf")
+async def debug_pdf():
+    """
+    Debug endpoint to check PDF availability and environment.
+    """
+    import sys
+    import os
+    
+    debug_info = {
+        "pdf_available": PDF_AVAILABLE,
+        "cwd": os.getcwd(),
+        "sys_path": sys.path,
+        "backend_in_modules": "backend" in sys.modules,
+        "backend_init_exists": os.path.exists("backend/__init__.py"),
+    }
+    
+    if not PDF_AVAILABLE:
+        try:
+            from backend.pdf_generator import generate_wafer_report_pdf
+            debug_info["import_test"] = "Success (Unexpected)"
+        except ImportError as e:
+            debug_info["import_error"] = str(e)
+        except Exception as e:
+            debug_info["other_error"] = str(e)
+            
+    return debug_info
+
+
+@app.post("/api/export-lot-pdf")
+async def export_lot_pdf(lot_data: dict):
+    """
+    Generate PDF for a specific lot using provided data.
+    Used for batch analysis page.
+    """
+    if not PDF_AVAILABLE:
+        raise HTTPException(status_code=500, detail="PDF generation not available")
+    
+    try:
+        # Generate PDF directly from provided lot data
+        pdf_buffer = generate_wafer_report_pdf(
+            lot_data.get("lot_stats", {}),
+            lot_data.get("wafer_analyses", [])
+        )
+        
+        return StreamingResponse(
+            pdf_buffer,
+            media_type="application/pdf",
+            headers={"Content-Disposition": f"attachment; filename=batch_report_{datetime.now().strftime('%Y%m%d_%H%M%S')}.pdf"}
+        )
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"PDF generation failed: {str(e)}")
+
+
+@app.get("/api/export-pdf")
+async def export_pdf(tool_id: str = "", start_date: str = "", end_date: str = ""):
+    """
+    Generate and download a PDF report for wafer analyses.
+    """
+    from datetime import datetime, timedelta
+    
+    db = next(get_db())
+    try:
+        # Query wafers
+        query = db.query(Wafer)
+        
+        if tool_id:
+            query = query.filter(Wafer.tool_id == tool_id)
+        
+        if start_date:
+            start_dt = datetime.fromisoformat(start_date)
+            query = query.filter(Wafer.analyzed_at >= start_dt)
+        else:
+            # Default to last 7 days
+            start_dt = datetime.utcnow() - timedelta(days=7)
+            query = query.filter(Wafer.analyzed_at >= start_dt)
+        
+        if end_date:
+            end_dt = datetime.fromisoformat(end_date)
+            query = query.filter(Wafer.analyzed_at <= end_dt)
+        
+        wafers = query.all()
+        
+        # Calculate lot statistics
+        total_wafers = len(wafers)
+        defective_wafers = sum(1 for w in wafers if w.final_verdict == "FAIL")
+        yield_rate = ((total_wafers - defective_wafers) / total_wafers * 100) if total_wafers > 0 else 0
+        
+        # Defect distribution
+        defect_dist = {}
+        for wafer in wafers:
+            pattern = wafer.predicted_class or "None"
+            defect_dist[pattern] = defect_dist.get(pattern, 0) + 1
+        
+        lot_data = {
+            "total_wafers": total_wafers,
+            "defective_wafers": defective_wafers,
+            "yield_rate": yield_rate,
+            "defect_distribution": defect_dist
+        }
+        
+        # Format wafer data for PDF
+        wafer_analyses = []
+        for wafer in wafers:
+            wafer_analyses.append({
+                "waferId": wafer.wafer_id,
+                "fileName": wafer.file_name,
+                "finalVerdict": wafer.final_verdict,
+                "confidence": wafer.confidence * 100 if wafer.confidence else 0,
+                "severity": wafer.severity or "None"
+            })
+        
+        # Generate PDF
+        pdf_buffer = generate_wafer_report_pdf(lot_data, wafer_analyses)
+        
+        # Return as download
+        return StreamingResponse(
+            pdf_buffer,
+            media_type="application/pdf",
+            headers={"Content-Disposition": f"attachment; filename=wafer_report_{datetime.now().strftime('%Y%m%d_%H%M%S')}.pdf"}
+        )
     
     finally:
         db.close()

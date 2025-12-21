@@ -1,14 +1,16 @@
 "use client";
 
 import { WaferDetectionDashboard } from "@/components/wafer-detection-dashboard";
-import { useRouter } from "next/navigation";
+import { AppSidebar } from "@/components/layout/AppSidebar";
+import { cn } from "@/lib/utils";
 
 export default function AnalysisPage() {
-    const router = useRouter();
-
     return (
-        <div className="min-h-screen bg-background-darker">
-            <WaferDetectionDashboard onBack={() => router.push("/")} />
-        </div>
+        <>
+            <AppSidebar showBackButton={true} currentPage="dashboard" />
+            <div className={cn("transition-all duration-300", "ml-64")}>
+                <WaferDetectionDashboard />
+            </div>
+        </>
     );
 }

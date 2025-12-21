@@ -15,7 +15,7 @@ import {
 
 interface AppSidebarProps {
     showBackButton?: boolean;
-    currentPage?: "dashboard" | "analytics" | "history" | "config";
+    currentPage?: "dashboard" | "analytics" | "spc" | "rca" | "parameters" | "copilot" | "history" | "config";
 }
 
 export function AppSidebar({ showBackButton = false, currentPage = "dashboard" }: AppSidebarProps) {
@@ -83,14 +83,52 @@ export function AppSidebar({ showBackButton = false, currentPage = "dashboard" }
                         {!sidebarCollapsed && "Analytics"}
                     </Button>
                     <Button
-                        variant="ghost"
+                        variant={currentPage === "spc" ? "secondary" : "ghost"}
+                        onClick={() => router.push("/spc")}
                         className={cn(
-                            "w-full text-sidebar-foreground hover:text-sidebar-foreground hover:bg-sidebar-accent",
+                            "w-full",
+                            currentPage !== "spc" && "text-sidebar-foreground hover:text-sidebar-foreground hover:bg-sidebar-accent",
+                            sidebarCollapsed ? "justify-center px-0" : "justify-start",
+                        )}
+                    >
+                        <Activity className={cn("h-4 w-4", !sidebarCollapsed && "mr-2")} />
+                        {!sidebarCollapsed && "SPC Charts"}
+                    </Button>
+                    <Button
+                        variant={currentPage === "rca" ? "secondary" : "ghost"}
+                        onClick={() => router.push("/rca")}
+                        className={cn(
+                            "w-full",
+                            currentPage !== "rca" && "text-sidebar-foreground hover:text-sidebar-foreground hover:bg-sidebar-accent",
+                            sidebarCollapsed ? "justify-center px-0" : "justify-start",
+                        )}
+                    >
+                        <Cpu className={cn("h-4 w-4", !sidebarCollapsed && "mr-2")} />
+                        {!sidebarCollapsed && "Root Cause"}
+                    </Button>
+                    <Button
+                        variant={currentPage === "parameters" ? "secondary" : "ghost"}
+                        onClick={() => router.push("/parameters")}
+                        className={cn(
+                            "w-full",
+                            currentPage !== "parameters" && "text-sidebar-foreground hover:text-sidebar-foreground hover:bg-sidebar-accent",
                             sidebarCollapsed ? "justify-center px-0" : "justify-start",
                         )}
                     >
                         <FileText className={cn("h-4 w-4", !sidebarCollapsed && "mr-2")} />
-                        {!sidebarCollapsed && "Scan History"}
+                        {!sidebarCollapsed && "Parameters"}
+                    </Button>
+                    <Button
+                        variant={currentPage === "copilot" ? "secondary" : "ghost"}
+                        onClick={() => router.push("/copilot")}
+                        className={cn(
+                            "w-full",
+                            currentPage !== "copilot" && "text-sidebar-foreground hover:text-sidebar-foreground hover:bg-sidebar-accent",
+                            sidebarCollapsed ? "justify-center px-0" : "justify-start",
+                        )}
+                    >
+                        <Activity className={cn("h-4 w-4", !sidebarCollapsed && "mr-2")} />
+                        {!sidebarCollapsed && "AI Copilot"}
                     </Button>
                     <Button
                         variant="ghost"
@@ -99,8 +137,8 @@ export function AppSidebar({ showBackButton = false, currentPage = "dashboard" }
                             sidebarCollapsed ? "justify-center px-0" : "justify-start",
                         )}
                     >
-                        <Cpu className={cn("h-4 w-4", !sidebarCollapsed && "mr-2")} />
-                        {!sidebarCollapsed && "Model Config"}
+                        <FileText className={cn("h-4 w-4", !sidebarCollapsed && "mr-2")} />
+                        {!sidebarCollapsed && "Scan History"}
                     </Button>
                 </nav>
 

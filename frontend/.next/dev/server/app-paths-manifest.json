@@ -2,5 +2,9 @@
   "/_not-found/page": "app/_not-found/page.js",
   "/analysis/page": "app/analysis/page.js",
   "/analytics/page": "app/analytics/page.js",
-  "/page": "app/page.js"
+  "/copilot/page": "app/copilot/page.js",
+  "/page": "app/page.js",
+  "/parameters/page": "app/parameters/page.js",
+  "/rca/page": "app/rca/page.js",
+  "/spc/page": "app/spc/page.js"
 }

@@ -747,6 +747,231 @@ async def analyze_wafer(file: UploadFile = File(...), tool_id: str = "", chamber
         os.unlink(tmp_path)
 
 
+@app.get("/api/spc")
+async def get_spc_data(
+    tool_id: Optional[str] = None,
+    days: int = 30
+):
+    """
+    Get Statistical Process Control data with control limits and rule violations.
+    """
+    from backend.spc_utils import calculate_control_limits, apply_western_electric_rules, generate_spc_summary
+    from datetime import datetime, timedelta
+    from sqlalchemy import func, case
+    from backend.models import SessionLocal
+    
+    db = SessionLocal()
+    try:
+        # Calculate date range
+        end_date = datetime.now()
+        start_date = end_date - timedelta(days=days)
+        
+        # Query daily defect rates
+        query = db.query(
+            func.date(Wafer.analyzed_at).label('date'),
+            func.count(Wafer.id).label('total'),
+            func.sum(
+                case(
+                    (Wafer.final_verdict == 'FAIL', 1),
+                    else_=0
+                )
+            ).label('defective')
+        ).filter(
+            Wafer.analyzed_at >= start_date,
+            Wafer.analyzed_at <= end_date
+        )
+        
+        if tool_id:
+            query = query.filter(Wafer.tool_id == tool_id)
+        
+        daily_data = query.group_by(func.date(Wafer.analyzed_at)).order_by(func.date(Wafer.analyzed_at)).all()
+        
+        # Format data for SPC analysis
+        data_points = []
+        defect_rates = []
+        
+        for row in daily_data:
+            defect_rate = (row.defective / row.total * 100) if row.total > 0 else 0
+            defect_rates.append(defect_rate)
+            data_points.append({
+                "date": str(row.date),
+                "total": row.total,
+                "defective": row.defective,
+                "value": round(defect_rate, 2)
+            })
+        
+        # Calculate control limits
+        control_limits = calculate_control_limits(defect_rates)
+        
+        # Apply Western Electric Rules
+        analyzed_data = apply_western_electric_rules(data_points, control_limits)
+        
+        # Generate summary
+        summary = generate_spc_summary(analyzed_data)
+        
+        return {
+            "data": analyzed_data,
+            "control_limits": control_limits,
+            "summary": summary,
+            "tool_id": tool_id,
+            "date_range": {
+                "start": start_date.isoformat(),
+                "end": end_date.isoformat()
+            }
+        }
+        
+    finally:
+        db.close()
+
+
+@app.get("/api/root-cause-analysis")
+async def root_cause_analysis():
+    """
+    Data-driven Root Cause Analysis based on existing wafer data.
+    Analyzes database to identify top issues and generate CAPA.
+    """
+    from backend.rca_utils import analyze_defect_data
+    from backend.models import SessionLocal
+    from sqlalchemy import case
+    
+    db = SessionLocal()
+    try:
+        result = analyze_defect_data(db)
+        return result
+    finally:
+        db.close()
+
+
+@app.get("/api/export-excel")
+async def export_excel(
+    tool_id: Optional[str] = None,
+    start_date: Optional[str] = None,
+    end_date: Optional[str] = None
+):
+    """
+    Export wafer analysis data as Excel spreadsheet.
+    """
+    try:
+        from backend.excel_utils import create_wafer_report_excel
+    except ImportError:
+        raise HTTPException(status_code=500, detail="Excel export not available. Install openpyxl.")
+    
+    from datetime import datetime, timedelta
+    
+    db = get_db()
+    try:
+        # Query data
+        query = db.query(Wafer)
+        
+        if tool_id:
+            query = query.filter(Wafer.tool_id == tool_id)
+        if start_date:
+            query = query.filter(Wafer.analyzed_at >= datetime.fromisoformat(start_date))
+        if end_date:
+            query = query.filter(Wafer.analyzed_at <= datetime.fromisoformat(end_date))
+        
+        wafers = query.order_by(Wafer.analyzed_at.desc()).limit(500).all()
+        
+        # Format for Excel
+        wafer_analyses = [
+            {
+                "waferId": w.wafer_id,
+                "fileName": w.file_name,
+                "finalVerdict": w.final_verdict,
+                "confidence": w.confidence or 0,
+                "severity": w.severity or "None",
+                "detectedPattern": w.predicted_class or "None"
+            }
+            for w in wafers
+        ]
+        
+        # Calculate lot data
+        total = len(wafers)
+        defective = sum(1 for w in wafers if w.final_verdict == "FAIL")
+        
+        # Get defect distribution
+        defect_dist = {}
+        for w in wafers:
+            if w.predicted_class:
+                defect_dist[w.predicted_class] = defect_dist.get(w.predicted_class, 0) + 1
+        
+        lot_data = {
+            "total_wafers": total,
+            "defective_wafers": defective,
+            "yield_rate": ((total - defective) / total * 100) if total > 0 else 100,
+            "defect_distribution": defect_dist
+        }
+        
+        # Generate Excel
+        excel_buffer = create_wafer_report_excel(lot_data, wafer_analyses)
+        
+        filename = f"wafer_report_{datetime.now().strftime('%Y%m%d_%H%M%S')}.xlsx"
+        
+        return StreamingResponse(
+            excel_buffer,
+            media_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+            headers={"Content-Disposition": f"attachment; filename={filename}"}
+        )
+        
+    finally:
+        db.close()
+
+
+@app.post("/api/notifications/configure")
+async def configure_notifications(request: dict):
+    """
+    Configure email notification settings.
+    """
+    from backend.email_utils import configure_notifications
+    return configure_notifications(request)
+
+
+@app.post("/api/notifications/test")
+async def send_test_notification(request: dict):
+    """
+    Send a test email notification.
+    """
+    from backend.email_utils import notification_service, create_defect_alert_html
+    from datetime import datetime
+    
+    recipients = request.get("recipients", [])
+    if not recipients:
+        raise HTTPException(status_code=400, detail="No recipients specified")
+    
+    # Create test alert
+    html = create_defect_alert_html(
+        lot_id="TEST-LOT-001",
+        defect_rate=18.5,
+        threshold=15.0,
+        tool_id="TOOL-TEST",
+        top_defects=[
+            {"pattern": "Scratch", "count": 5, "percentage": 50},
+            {"pattern": "Center", "count": 3, "percentage": 30}
+        ],
+        timestamp=datetime.now()
+    )
+    
+    result = notification_service.send_alert(
+        to_emails=recipients,
+        subject="[TEST] AgentWafer Defect Alert",
+        body_html=html
+    )
+    
+    return result
+
+
+@app.post("/api/copilot/query")
+async def copilot_query(request: dict):
+    """
+    AI Copilot natural language query endpoint.
+    """
+    from backend.copilot_utils import process_copilot_query
+    
+    query = request.get("query", "")
+    result = process_copilot_query(query)
+    return result
+
+
 @app.get("/api/health")
 async def health_check():
     return {"status": "healthy", "model": "k_cross_CNN.pt", "device": "cpu"}

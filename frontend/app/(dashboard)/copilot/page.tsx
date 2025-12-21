@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Bot, Send, User, Sparkles, TrendingUp, AlertTriangle, Loader2 } from "lucide-react";
-import { AppSidebar } from "@/components/layout/AppSidebar";
+import { PageTransition } from "@/components/layout/PageTransition";
 import { cn } from "@/lib/utils";
 
 interface Message {
@@ -95,8 +95,7 @@ export default function CopilotPage() {
     };
 
     return (
-        <>
-            <AppSidebar showBackButton={true} currentPage="config" />
+        <PageTransition className="flex-1 overflow-hidden">
             <div className={cn("transition-all duration-300", "ml-64 h-screen flex flex-col")}>
                 {/* Header */}
                 <div className="border-b p-6">
@@ -210,6 +209,6 @@ export default function CopilotPage() {
                     </div>
                 </div>
             </div>
-        </>
+        </PageTransition>
     );
 }

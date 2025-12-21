@@ -2297,3 +2297,1733 @@ Check the render method of `ForwardRef`.  It was passed a child from Line.
 [07:28:18.478] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/rca color: rgb(120, 120, 120) color: inherit {"dp":"/rca","o":"http://localhost:3000/rca","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766334293357}
 [07:28:36.046] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/parameters color: rgb(120, 120, 120) color: inherit {"dp":"/parameters","o":"http://localhost:3000/parameters","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766334310815}
 [07:28:48.921] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/copilot color: rgb(120, 120, 120) color: inherit {"dp":"/copilot","o":"http://localhost:3000/copilot","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766334323815}
+[09:19:42.978] Server  LOG      ✓ Compiled in 1441ms
+[09:19:56.280] Server  LOG      ✓ Compiled in 605ms
+[09:20:10.889] Server  LOG      ✓ Compiled in 688ms
+[09:20:24.712] Server  LOG      ✓ Compiled in 685ms
+[09:20:56.280] Browser ERROR   ./app/copilot/page.tsx:219:3
+Parsing ecmascript source code failed
+  217 |     );
+  218 | }
+> 219 | ```
+      |   ^
+> 220 | 
+      | ^
+
+Unterminated template
+
+Import traces:
+  Client Component Browser:
+    ./app/copilot/page.tsx [Client Component Browser]
+    ./app/copilot/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/copilot/page.tsx [Client Component SSR]
+    ./app/copilot/page.tsx [Server Component]
+[09:20:57.241] Browser ERROR   ./app/copilot/page.tsx:219:3
+Parsing ecmascript source code failed
+  217 |     );
+  218 | }
+> 219 | ```
+      |   ^
+> 220 | 
+      | ^
+
+Unterminated template
+
+Import traces:
+  Client Component Browser:
+    ./app/copilot/page.tsx [Client Component Browser]
+    ./app/copilot/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/copilot/page.tsx [Client Component SSR]
+    ./app/copilot/page.tsx [Server Component]
+[09:20:57.241] Browser ERROR   ./app/copilot/page.tsx:219:3
+Parsing ecmascript source code failed
+  217 |     );
+  218 | }
+> 219 | ```
+      |   ^
+> 220 | 
+      | ^
+
+Unterminated template
+
+Import traces:
+  Client Component Browser:
+    ./app/copilot/page.tsx [Client Component Browser]
+    ./app/copilot/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/copilot/page.tsx [Client Component SSR]
+    ./app/copilot/page.tsx [Server Component]
+[09:21:05.675] Server  LOG      ✓ Compiled in 435ms
+[09:21:36.406] Server  LOG      ✓ Compiled in 2.1s
+[09:22:45.136] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analysis color: rgb(120, 120, 120) color: inherit {"dp":"/analysis","o":"http://localhost:3000/analysis","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766341160024}
+[09:22:46.357] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analytics color: rgb(120, 120, 120) color: inherit {"dp":"/analytics","o":"http://localhost:3000/analytics","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766341161259}
+[09:22:48.648] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/spc color: rgb(120, 120, 120) color: inherit {"dp":"/spc","o":"http://localhost:3000/spc","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766341163543}
+[09:22:49.711] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/rca color: rgb(120, 120, 120) color: inherit {"dp":"/rca","o":"http://localhost:3000/rca","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766341164591}
+[09:22:50.659] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/parameters color: rgb(120, 120, 120) color: inherit {"dp":"/parameters","o":"http://localhost:3000/parameters","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766341165443}
+[09:22:51.378] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analytics color: rgb(120, 120, 120) color: inherit {"dp":"/analytics","o":"http://localhost:3000/analytics","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766341166278}
+[09:22:52.621] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analysis color: rgb(120, 120, 120) color: inherit {"dp":"/analysis","o":"http://localhost:3000/analysis","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766341167522}
+[09:22:53.849] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analytics color: rgb(120, 120, 120) color: inherit {"dp":"/analytics","o":"http://localhost:3000/analytics","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766341168751}
+[09:22:55.117] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/spc color: rgb(120, 120, 120) color: inherit {"dp":"/spc","o":"http://localhost:3000/spc","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766341169960}
+[09:22:56.026] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/rca color: rgb(120, 120, 120) color: inherit {"dp":"/rca","o":"http://localhost:3000/rca","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766341170927}
+[09:22:57.021] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/parameters color: rgb(120, 120, 120) color: inherit {"dp":"/parameters","o":"http://localhost:3000/parameters","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766341171825}
+[09:22:57.584] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analytics color: rgb(120, 120, 120) color: inherit {"dp":"/analytics","o":"http://localhost:3000/analytics","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766341172476}
+[09:22:59.169] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analysis color: rgb(120, 120, 120) color: inherit {"dp":"/analysis","o":"http://localhost:3000/analysis","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766341174069}
+[09:25:18.240] Server  LOG      ✓ Compiled in 3.9s
+[09:28:59.498] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analytics color: rgb(120, 120, 120) color: inherit {"dp":"/analytics","o":"http://localhost:3000/analytics","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766341533496}
+[09:29:01.689] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/spc color: rgb(120, 120, 120) color: inherit {"dp":"/spc","o":"http://localhost:3000/spc","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766341536587}
+[09:29:03.039] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analysis color: rgb(120, 120, 120) color: inherit {"dp":"/analysis","o":"http://localhost:3000/analysis","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766341537937}
+[09:29:03.957] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analytics color: rgb(120, 120, 120) color: inherit {"dp":"/analytics","o":"http://localhost:3000/analytics","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766341538852}
+[09:29:05.041] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/rca color: rgb(120, 120, 120) color: inherit {"dp":"/rca","o":"http://localhost:3000/rca","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766341539935}
+[09:29:05.714] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analysis color: rgb(120, 120, 120) color: inherit {"dp":"/analysis","o":"http://localhost:3000/analysis","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766341540616}
+[09:29:06.843] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/rca color: rgb(120, 120, 120) color: inherit {"dp":"/rca","o":"http://localhost:3000/rca","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766341541728}
+[09:29:07.846] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analysis color: rgb(120, 120, 120) color: inherit {"dp":"/analysis","o":"http://localhost:3000/analysis","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766341542747}
+[09:29:09.303] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/parameters color: rgb(120, 120, 120) color: inherit {"dp":"/parameters","o":"http://localhost:3000/parameters","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766341544089}
+[09:29:09.980] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analysis color: rgb(120, 120, 120) color: inherit {"dp":"/analysis","o":"http://localhost:3000/analysis","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766341544881}
+[09:29:10.992] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/spc color: rgb(120, 120, 120) color: inherit {"dp":"/spc","o":"http://localhost:3000/spc","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766341545891}
+[09:29:11.839] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analysis color: rgb(120, 120, 120) color: inherit {"dp":"/analysis","o":"http://localhost:3000/analysis","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766341546739}
+[09:29:13.566] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analytics color: rgb(120, 120, 120) color: inherit {"dp":"/analytics","o":"http://localhost:3000/analytics","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766341548462}
+[09:29:24.711] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/spc color: rgb(120, 120, 120) color: inherit {"dp":"/spc","o":"http://localhost:3000/spc","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766341559609}
+[09:29:25.808] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analysis color: rgb(120, 120, 120) color: inherit {"dp":"/analysis","o":"http://localhost:3000/analysis","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766341560708}
+[09:29:26.475] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analytics color: rgb(120, 120, 120) color: inherit {"dp":"/analytics","o":"http://localhost:3000/analytics","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766341561370}
+[09:30:34.451] Server  LOG      ✓ Compiled in 578ms
+[09:30:38.239] Browser ERROR   ./app/(dashboard)/analysis/page.tsx:10:5
+Parsing ecmascript source code failed
+   8 | export default function AnalysisPage() {
+   9 |     return (
+> 10 |     return (
+     |     ^^^^^^
+  11 |         <PageTransition>
+  12 |             <PageTransition>
+  13 |                 <div className={cn("transition-all duration-300", "ml-64")}>
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/analysis/page.tsx [Client Component Browser]
+    ./app/(dashboard)/analysis/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/analysis/page.tsx [Client Component SSR]
+    ./app/(dashboard)/analysis/page.tsx [Server Component]
+[09:30:38.240] Browser ERROR   ./app/(dashboard)/analysis/page.tsx:10:5
+Parsing ecmascript source code failed
+   8 | export default function AnalysisPage() {
+   9 |     return (
+> 10 |     return (
+     |     ^^^^^^
+  11 |         <PageTransition>
+  12 |             <PageTransition>
+  13 |                 <div className={cn("transition-all duration-300", "ml-64")}>
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/analysis/page.tsx [Client Component Browser]
+    ./app/(dashboard)/analysis/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/analysis/page.tsx [Client Component SSR]
+    ./app/(dashboard)/analysis/page.tsx [Server Component]
+[09:30:38.240] Browser ERROR   ./app/(dashboard)/analysis/page.tsx:10:5
+Parsing ecmascript source code failed
+   8 | export default function AnalysisPage() {
+   9 |     return (
+> 10 |     return (
+     |     ^^^^^^
+  11 |         <PageTransition>
+  12 |             <PageTransition>
+  13 |                 <div className={cn("transition-all duration-300", "ml-64")}>
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/analysis/page.tsx [Client Component Browser]
+    ./app/(dashboard)/analysis/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/analysis/page.tsx [Client Component SSR]
+    ./app/(dashboard)/analysis/page.tsx [Server Component]
+[09:30:43.003] Server  LOG      ✓ Compiled in 573ms
+[09:31:16.583] Server  LOG      ✓ Compiled in 104ms
+[09:31:28.585] Server  ERROR    ⨯ ./app/(dashboard)/spc/page.tsx:394:9
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |         ^
+  395 |     );
+  396 | }
+  397 |
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+
+
+./app/(dashboard)/spc/page.tsx:394:10
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |          ^^^^^^^^^^^^^^^^^
+  395 |     );
+  396 | }
+  397 |
+
+Unterminated regexp literal
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+
+[09:31:28.838] Browser ERROR   ./app/(dashboard)/spc/page.tsx:394:9
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |         ^
+  395 |     );
+  396 | }
+  397 |
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+[09:31:28.838] Browser ERROR   ./app/(dashboard)/spc/page.tsx:394:10
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |          ^^^^^^^^^^^^^^^^^
+  395 |     );
+  396 | }
+  397 |
+
+Unterminated regexp literal
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+[09:31:28.849] Browser ERROR   ./app/(dashboard)/spc/page.tsx:394:9
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |         ^
+  395 |     );
+  396 | }
+  397 |
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+[09:31:28.849] Browser ERROR   ./app/(dashboard)/spc/page.tsx:394:10
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |          ^^^^^^^^^^^^^^^^^
+  395 |     );
+  396 | }
+  397 |
+
+Unterminated regexp literal
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+[09:31:29.145] Server  ERROR    ⨯ ./app/(dashboard)/spc/page.tsx:394:9
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |         ^
+  395 |     );
+  396 | }
+  397 |
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+
+
+./app/(dashboard)/spc/page.tsx:394:10
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |          ^^^^^^^^^^^^^^^^^
+  395 |     );
+  396 | }
+  397 |
+
+Unterminated regexp literal
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+
+[09:31:29.668] Browser ERROR   ./app/(dashboard)/spc/page.tsx:394:9
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |         ^
+  395 |     );
+  396 | }
+  397 |
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+[09:31:29.668] Browser ERROR   ./app/(dashboard)/spc/page.tsx:394:10
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |          ^^^^^^^^^^^^^^^^^
+  395 |     );
+  396 | }
+  397 |
+
+Unterminated regexp literal
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+[09:31:29.668] Browser ERROR   ./app/(dashboard)/spc/page.tsx:394:9
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |         ^
+  395 |     );
+  396 | }
+  397 |
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+[09:31:29.668] Browser ERROR   ./app/(dashboard)/spc/page.tsx:394:10
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |          ^^^^^^^^^^^^^^^^^
+  395 |     );
+  396 | }
+  397 |
+
+Unterminated regexp literal
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+[09:31:30.579] Browser ERROR   uncaughtError: Error: ./app/(dashboard)/spc/page.tsx:394:9
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |         ^
+  395 |     );
+  396 | }
+  397 |
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+
+[09:31:30.829] Browser ERROR   ./app/(dashboard)/spc/page.tsx:394:9
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |         ^
+  395 |     );
+  396 | }
+  397 |
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+[09:31:30.829] Browser ERROR   ./app/(dashboard)/spc/page.tsx:394:10
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |          ^^^^^^^^^^^^^^^^^
+  395 |     );
+  396 | }
+  397 |
+
+Unterminated regexp literal
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+[09:31:30.829] Browser ERROR   ./app/(dashboard)/spc/page.tsx:394:9
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |         ^
+  395 |     );
+  396 | }
+  397 |
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+[09:31:30.829] Browser ERROR   ./app/(dashboard)/spc/page.tsx:394:10
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |          ^^^^^^^^^^^^^^^^^
+  395 |     );
+  396 | }
+  397 |
+
+Unterminated regexp literal
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+[09:31:31.277] Browser ERROR   ./app/(dashboard)/spc/page.tsx:394:9
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |         ^
+  395 |     );
+  396 | }
+  397 |
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+[09:31:31.277] Browser ERROR   ./app/(dashboard)/spc/page.tsx:394:10
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |          ^^^^^^^^^^^^^^^^^
+  395 |     );
+  396 | }
+  397 |
+
+Unterminated regexp literal
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+[09:31:31.277] Browser ERROR   ./app/(dashboard)/spc/page.tsx:394:9
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |         ^
+  395 |     );
+  396 | }
+  397 |
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+[09:31:31.277] Browser ERROR   ./app/(dashboard)/spc/page.tsx:394:10
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |          ^^^^^^^^^^^^^^^^^
+  395 |     );
+  396 | }
+  397 |
+
+Unterminated regexp literal
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+[09:31:31.277] Browser ERROR   ./app/(dashboard)/spc/page.tsx:394:9
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |         ^
+  395 |     );
+  396 | }
+  397 |
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+[09:31:31.277] Browser ERROR   ./app/(dashboard)/spc/page.tsx:394:10
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |          ^^^^^^^^^^^^^^^^^
+  395 |     );
+  396 | }
+  397 |
+
+Unterminated regexp literal
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+[09:31:31.277] Browser ERROR   ./app/(dashboard)/spc/page.tsx:394:9
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |         ^
+  395 |     );
+  396 | }
+  397 |
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+[09:31:31.277] Browser ERROR   ./app/(dashboard)/spc/page.tsx:394:10
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |          ^^^^^^^^^^^^^^^^^
+  395 |     );
+  396 | }
+  397 |
+
+Unterminated regexp literal
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+[09:31:31.277] Browser ERROR   ./app/(dashboard)/spc/page.tsx:394:9
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |         ^
+  395 |     );
+  396 | }
+  397 |
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+[09:31:31.277] Browser ERROR   ./app/(dashboard)/spc/page.tsx:394:10
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |          ^^^^^^^^^^^^^^^^^
+  395 |     );
+  396 | }
+  397 |
+
+Unterminated regexp literal
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+[09:31:31.277] Browser ERROR   ./app/(dashboard)/spc/page.tsx:394:9
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |         ^
+  395 |     );
+  396 | }
+  397 |
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+[09:31:31.277] Browser ERROR   ./app/(dashboard)/spc/page.tsx:394:10
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |          ^^^^^^^^^^^^^^^^^
+  395 |     );
+  396 | }
+  397 |
+
+Unterminated regexp literal
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+[09:31:31.278] Browser ERROR   ./app/(dashboard)/spc/page.tsx:394:9
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |         ^
+  395 |     );
+  396 | }
+  397 |
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+[09:31:31.278] Browser ERROR   ./app/(dashboard)/spc/page.tsx:394:10
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |          ^^^^^^^^^^^^^^^^^
+  395 |     );
+  396 | }
+  397 |
+
+Unterminated regexp literal
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+[09:31:31.278] Browser ERROR   ./app/(dashboard)/spc/page.tsx:394:9
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |         ^
+  395 |     );
+  396 | }
+  397 |
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+[09:31:31.278] Browser ERROR   ./app/(dashboard)/spc/page.tsx:394:10
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |          ^^^^^^^^^^^^^^^^^
+  395 |     );
+  396 | }
+  397 |
+
+Unterminated regexp literal
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+[09:31:31.278] Browser ERROR   ./app/(dashboard)/spc/page.tsx:394:9
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |         ^
+  395 |     );
+  396 | }
+  397 |
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+[09:31:31.278] Browser ERROR   ./app/(dashboard)/spc/page.tsx:394:10
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |          ^^^^^^^^^^^^^^^^^
+  395 |     );
+  396 | }
+  397 |
+
+Unterminated regexp literal
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+[09:31:31.278] Browser ERROR   ./app/(dashboard)/spc/page.tsx:394:9
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |         ^
+  395 |     );
+  396 | }
+  397 |
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+[09:31:31.278] Browser ERROR   ./app/(dashboard)/spc/page.tsx:394:10
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |          ^^^^^^^^^^^^^^^^^
+  395 |     );
+  396 | }
+  397 |
+
+Unterminated regexp literal
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+[09:31:31.278] Browser ERROR   ./app/(dashboard)/spc/page.tsx:394:9
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |         ^
+  395 |     );
+  396 | }
+  397 |
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+[09:31:31.278] Browser ERROR   ./app/(dashboard)/spc/page.tsx:394:10
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |          ^^^^^^^^^^^^^^^^^
+  395 |     );
+  396 | }
+  397 |
+
+Unterminated regexp literal
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+[09:31:31.278] Browser ERROR   ./app/(dashboard)/spc/page.tsx:394:9
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |         ^
+  395 |     );
+  396 | }
+  397 |
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+[09:31:31.278] Browser ERROR   ./app/(dashboard)/spc/page.tsx:394:10
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |          ^^^^^^^^^^^^^^^^^
+  395 |     );
+  396 | }
+  397 |
+
+Unterminated regexp literal
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+[09:31:36.247] Browser ERROR   ./app/(dashboard)/spc/page.tsx:394:9
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |         ^
+  395 |     );
+  396 | }
+  397 |
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+[09:31:36.247] Browser ERROR   ./app/(dashboard)/spc/page.tsx:394:10
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |          ^^^^^^^^^^^^^^^^^
+  395 |     );
+  396 | }
+  397 |
+
+Unterminated regexp literal
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+[09:31:36.247] Browser ERROR   ./app/(dashboard)/spc/page.tsx:394:9
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |         ^
+  395 |     );
+  396 | }
+  397 |
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+[09:31:36.247] Browser ERROR   ./app/(dashboard)/spc/page.tsx:394:10
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |          ^^^^^^^^^^^^^^^^^
+  395 |     );
+  396 | }
+  397 |
+
+Unterminated regexp literal
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+[09:31:36.395] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[09:31:37.550] Browser ERROR   ./app/(dashboard)/spc/page.tsx:394:9
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |         ^
+  395 |     );
+  396 | }
+  397 |
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+[09:31:37.550] Browser ERROR   ./app/(dashboard)/spc/page.tsx:394:10
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |          ^^^^^^^^^^^^^^^^^
+  395 |     );
+  396 | }
+  397 |
+
+Unterminated regexp literal
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+[09:31:37.554] Browser ERROR   ./app/(dashboard)/spc/page.tsx:394:9
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |         ^
+  395 |     );
+  396 | }
+  397 |
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+[09:31:37.554] Browser ERROR   ./app/(dashboard)/spc/page.tsx:394:10
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |          ^^^^^^^^^^^^^^^^^
+  395 |     );
+  396 | }
+  397 |
+
+Unterminated regexp literal
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+[09:31:37.598] Browser ERROR   ./app/(dashboard)/spc/page.tsx:394:9
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |         ^
+  395 |     );
+  396 | }
+  397 |
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+[09:31:37.598] Browser ERROR   ./app/(dashboard)/spc/page.tsx:394:10
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |          ^^^^^^^^^^^^^^^^^
+  395 |     );
+  396 | }
+  397 |
+
+Unterminated regexp literal
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+[09:31:40.255] Browser ERROR   ./app/(dashboard)/spc/page.tsx:394:9
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |         ^
+  395 |     );
+  396 | }
+  397 |
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+[09:31:40.255] Browser ERROR   ./app/(dashboard)/spc/page.tsx:394:10
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |          ^^^^^^^^^^^^^^^^^
+  395 |     );
+  396 | }
+  397 |
+
+Unterminated regexp literal
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+[09:31:40.255] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en" className="dark">
+                          <body
+                            className="font-sans antialiased"
+-                           style={{padding-right:"15px",overflow-x:"hidden",overflow-y:"hidden"}}
+                          >
+                  ...
+
+[09:31:40.255] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[09:31:40.255] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[09:31:40.255] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766341694561}
+[09:31:40.255] Browser ERROR   ./app/(dashboard)/spc/page.tsx:394:9
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |         ^
+  395 |     );
+  396 | }
+  397 |
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+[09:31:40.255] Browser ERROR   ./app/(dashboard)/spc/page.tsx:394:10
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |          ^^^^^^^^^^^^^^^^^
+  395 |     );
+  396 | }
+  397 |
+
+Unterminated regexp literal
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+[09:31:40.256] Browser ERROR   ./app/(dashboard)/spc/page.tsx:394:9
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |         ^
+  395 |     );
+  396 | }
+  397 |
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+[09:31:40.256] Browser ERROR   ./app/(dashboard)/spc/page.tsx:394:10
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |          ^^^^^^^^^^^^^^^^^
+  395 |     );
+  396 | }
+  397 |
+
+Unterminated regexp literal
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+[09:32:03.260] Browser ERROR   ./app/(dashboard)/spc/page.tsx:394:9
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |         ^
+  395 |     );
+  396 | }
+  397 |
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+[09:32:03.260] Browser ERROR   ./app/(dashboard)/spc/page.tsx:394:10
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |          ^^^^^^^^^^^^^^^^^
+  395 |     );
+  396 | }
+  397 |
+
+Unterminated regexp literal
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+[09:32:03.262] Browser ERROR   ./app/(dashboard)/spc/page.tsx:394:9
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |         ^
+  395 |     );
+  396 | }
+  397 |
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+[09:32:03.262] Browser ERROR   ./app/(dashboard)/spc/page.tsx:394:10
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |          ^^^^^^^^^^^^^^^^^
+  395 |     );
+  396 | }
+  397 |
+
+Unterminated regexp literal
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+[09:32:03.263] Browser ERROR   ./app/(dashboard)/spc/page.tsx:394:9
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |         ^
+  395 |     );
+  396 | }
+  397 |
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+[09:32:03.263] Browser ERROR   ./app/(dashboard)/spc/page.tsx:394:10
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |          ^^^^^^^^^^^^^^^^^
+  395 |     );
+  396 | }
+  397 |
+
+Unterminated regexp literal
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+[09:32:32.245] Browser ERROR   ./app/(dashboard)/spc/page.tsx:394:9
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |         ^
+  395 |     );
+  396 | }
+  397 |
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+[09:32:32.245] Browser ERROR   ./app/(dashboard)/spc/page.tsx:394:10
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |          ^^^^^^^^^^^^^^^^^
+  395 |     );
+  396 | }
+  397 |
+
+Unterminated regexp literal
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+[09:32:32.245] Browser ERROR   ./app/(dashboard)/spc/page.tsx:394:9
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |         ^
+  395 |     );
+  396 | }
+  397 |
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+[09:32:32.245] Browser ERROR   ./app/(dashboard)/spc/page.tsx:394:10
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |          ^^^^^^^^^^^^^^^^^
+  395 |     );
+  396 | }
+  397 |
+
+Unterminated regexp literal
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+[09:32:32.246] Browser ERROR   ./app/(dashboard)/spc/page.tsx:394:9
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |         ^
+  395 |     );
+  396 | }
+  397 |
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+[09:32:32.246] Browser ERROR   ./app/(dashboard)/spc/page.tsx:394:10
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |          ^^^^^^^^^^^^^^^^^
+  395 |     );
+  396 | }
+  397 |
+
+Unterminated regexp literal
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+[09:33:08.872] Browser ERROR   ./app/(dashboard)/spc/page.tsx:394:9
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |         ^
+  395 |     );
+  396 | }
+  397 |
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+[09:33:08.873] Browser ERROR   ./app/(dashboard)/spc/page.tsx:394:10
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |          ^^^^^^^^^^^^^^^^^
+  395 |     );
+  396 | }
+  397 |
+
+Unterminated regexp literal
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+[09:33:08.879] Browser ERROR   ./app/(dashboard)/spc/page.tsx:394:9
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |         ^
+  395 |     );
+  396 | }
+  397 |
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+[09:33:08.879] Browser ERROR   ./app/(dashboard)/spc/page.tsx:394:10
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |          ^^^^^^^^^^^^^^^^^
+  395 |     );
+  396 | }
+  397 |
+
+Unterminated regexp literal
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+[09:33:08.880] Browser ERROR   ./app/(dashboard)/spc/page.tsx:394:9
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |         ^
+  395 |     );
+  396 | }
+  397 |
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+[09:33:08.880] Browser ERROR   ./app/(dashboard)/spc/page.tsx:394:10
+Parsing ecmascript source code failed
+  392 |             </div>
+  393 |         </div>
+> 394 |         </PageTransition >
+      |          ^^^^^^^^^^^^^^^^^
+  395 |     );
+  396 | }
+  397 |
+
+Unterminated regexp literal
+
+Import traces:
+  Client Component Browser:
+    ./app/(dashboard)/spc/page.tsx [Client Component Browser]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/(dashboard)/spc/page.tsx [Client Component SSR]
+    ./app/(dashboard)/spc/page.tsx [Server Component]
+[09:33:35.937] Server  LOG      ✓ Compiled in 497ms
+[09:38:13.787] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analysis color: rgb(120, 120, 120) color: inherit {"dp":"/analysis","o":"http://localhost:3000/analysis","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766342088671}
+[09:38:15.068] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analytics color: rgb(120, 120, 120) color: inherit {"dp":"/analytics","o":"http://localhost:3000/analytics","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766342089962}
+[09:38:17.281] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/spc color: rgb(120, 120, 120) color: inherit {"dp":"/spc","o":"http://localhost:3000/spc","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766342092181}
+[09:38:21.768] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/rca color: rgb(120, 120, 120) color: inherit {"dp":"/rca","o":"http://localhost:3000/rca","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766342096644}
+[09:38:25.180] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/parameters color: rgb(120, 120, 120) color: inherit {"dp":"/parameters","o":"http://localhost:3000/parameters","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766342099941}
+[09:38:26.431] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/rca color: rgb(120, 120, 120) color: inherit {"dp":"/rca","o":"http://localhost:3000/rca","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766342101327}
+[09:38:27.519] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/spc color: rgb(120, 120, 120) color: inherit {"dp":"/spc","o":"http://localhost:3000/spc","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766342102397}
+[09:38:28.856] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/parameters color: rgb(120, 120, 120) color: inherit {"dp":"/parameters","o":"http://localhost:3000/parameters","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766342103653}
+[09:38:30.166] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/rca color: rgb(120, 120, 120) color: inherit {"dp":"/rca","o":"http://localhost:3000/rca","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766342105021}
+[09:38:31.071] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/spc color: rgb(120, 120, 120) color: inherit {"dp":"/spc","o":"http://localhost:3000/spc","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766342105939}
+[09:38:31.948] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analytics color: rgb(120, 120, 120) color: inherit {"dp":"/analytics","o":"http://localhost:3000/analytics","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766342106848}
+[09:38:34.140] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analysis color: rgb(120, 120, 120) color: inherit {"dp":"/analysis","o":"http://localhost:3000/analysis","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766342109039}
+[09:38:35.063] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analytics color: rgb(120, 120, 120) color: inherit {"dp":"/analytics","o":"http://localhost:3000/analytics","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766342109961}
+[09:38:38.385] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/spc color: rgb(120, 120, 120) color: inherit {"dp":"/spc","o":"http://localhost:3000/spc","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766342113249}
+[09:38:40.738] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/rca color: rgb(120, 120, 120) color: inherit {"dp":"/rca","o":"http://localhost:3000/rca","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766342115634}
+[09:38:43.515] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/parameters color: rgb(120, 120, 120) color: inherit {"dp":"/parameters","o":"http://localhost:3000/parameters","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766342118320}
+[09:39:04.237] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/copilot color: rgb(120, 120, 120) color: inherit {"dp":"/copilot","o":"http://localhost:3000/copilot","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766342139130}
+[09:39:14.479] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766342149363}
+[09:39:21.516] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analysis color: rgb(120, 120, 120) color: inherit {"dp":"/analysis","o":"http://localhost:3000/analysis","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766342156415}
+[09:39:29.786] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/copilot color: rgb(120, 120, 120) color: inherit {"dp":"/copilot","o":"http://localhost:3000/copilot","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766342164681}
+[09:39:31.258] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/parameters color: rgb(120, 120, 120) color: inherit {"dp":"/parameters","o":"http://localhost:3000/parameters","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1766342166028}

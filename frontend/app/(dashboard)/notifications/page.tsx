@@ -9,7 +9,7 @@ import { Switch } from "@/components/ui/switch";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Mail, Bell, AlertTriangle, CheckCircle2, Loader2, Settings2 } from "lucide-react";
-import { AppSidebar } from "@/components/layout/AppSidebar";
+import { PageTransition } from "@/components/layout/PageTransition";
 import { cn } from "@/lib/utils";
 
 interface NotificationConfig {
@@ -92,8 +92,7 @@ export default function NotificationsPage() {
     };
 
     return (
-        <>
-            <AppSidebar showBackButton={true} currentPage="config" />
+        <PageTransition>
             <div className={cn("transition-all duration-300", "ml-64")}>
                 <div className="container mx-auto p-8">
                     {/* Header */}
@@ -335,6 +334,6 @@ export default function NotificationsPage() {
                     </Tabs>
                 </div>
             </div>
-        </>
+        </PageTransition>
     );
 }

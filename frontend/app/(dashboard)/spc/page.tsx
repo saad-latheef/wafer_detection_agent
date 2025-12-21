@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, ReferenceLine, ReferenceArea } from "recharts";
 import { AlertTriangle, CheckCircle2, Activity, TrendingDown, TrendingUp } from "lucide-react";
-import { AppSidebar } from "@/components/layout/AppSidebar";
+import { PageTransition } from "@/components/layout/PageTransition";
 import { cn } from "@/lib/utils";
 
 interface SPCDataPoint {
@@ -117,15 +117,14 @@ export default function SPCPage() {
 
     if (loading) {
         return (
-            <div className="flex items-center justify-center min-h-screen">
+            <div className="flex items-center justify-center min-h-screen ml-64">
                 <div className="h-12 w-12 rounded-full border-4 border-primary border-t-transparent animate-spin" />
             </div>
         );
     }
 
     return (
-        <>
-            <AppSidebar showBackButton={true} currentPage="spc" />
+        <PageTransition>
             <div className={cn("transition-all duration-300", "ml-64")}>
                 <div className="container mx-auto p-8">
                     {/* Header */}
@@ -390,6 +389,6 @@ export default function SPCPage() {
                     </Card>
                 </div>
             </div>
-        </>
+        </PageTransition>
     );
 }

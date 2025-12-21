@@ -168,6 +168,7 @@
     --radius-xl: .75rem;
     --radius-2xl: 1rem;
     --radius-3xl: 1.5rem;
+    --ease-out: cubic-bezier(0, 0, .2, 1);
     --ease-in-out: cubic-bezier(.4, 0, .2, 1);
     --animate-spin: spin 1s linear infinite;
     --animate-pulse: pulse 2s cubic-bezier(.4, 0, .6, 1) infinite;
@@ -3674,6 +3675,11 @@
     transition-timing-function: linear;
   }
 
+  .ease-out {
+    --tw-ease: var(--ease-out);
+    transition-timing-function: var(--ease-out);
+  }
+
   .animate-in {
     --tw-enter-opacity: initial;
     --tw-enter-scale: initial;
@@ -3724,6 +3730,10 @@
 
   .ease-linear {
     animation-timing-function: linear;
+  }
+
+  .ease-out {
+    animation-timing-function: cubic-bezier(0, 0, .2, 1);
   }
 
   .fade-in-0 {

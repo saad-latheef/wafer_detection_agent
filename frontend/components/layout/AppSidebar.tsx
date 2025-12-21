@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import {
@@ -18,9 +18,21 @@ interface AppSidebarProps {
     currentPage?: "dashboard" | "analytics" | "spc" | "rca" | "parameters" | "copilot" | "history" | "config";
 }
 
-export function AppSidebar({ showBackButton = false, currentPage = "dashboard" }: AppSidebarProps) {
+export function AppSidebar({ showBackButton = false, currentPage }: AppSidebarProps) {
     const router = useRouter();
+    const pathname = usePathname();
     const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+
+    const activePage = currentPage || (() => {
+        if (pathname.startsWith("/analysis")) return "dashboard";
+        if (pathname.startsWith("/analytics")) return "analytics";
+        if (pathname.startsWith("/spc")) return "spc";
+        if (pathname.startsWith("/rca")) return "rca";
+        if (pathname.startsWith("/parameters")) return "parameters";
+        if (pathname.startsWith("/copilot")) return "copilot";
+        if (pathname.startsWith("/notifications")) return "config";
+        return "dashboard";
+    })();
 
     return (
         <aside
@@ -59,11 +71,11 @@ export function AppSidebar({ showBackButton = false, currentPage = "dashboard" }
                         </Button>
                     )}
                     <Button
-                        variant={currentPage === "dashboard" ? "secondary" : "ghost"}
+                        variant={activePage === "dashboard" ? "secondary" : "ghost"}
                         onClick={() => router.push("/analysis")}
                         className={cn(
                             "w-full",
-                            currentPage !== "dashboard" && "text-sidebar-foreground hover:text-sidebar-foreground hover:bg-sidebar-accent",
+                            activePage !== "dashboard" && "text-sidebar-foreground hover:text-sidebar-foreground hover:bg-sidebar-accent",
                             sidebarCollapsed ? "justify-center px-0" : "justify-start"
                         )}
                     >
@@ -71,11 +83,11 @@ export function AppSidebar({ showBackButton = false, currentPage = "dashboard" }
                         {!sidebarCollapsed && "Dashboard"}
                     </Button>
                     <Button
-                        variant={currentPage === "analytics" ? "secondary" : "ghost"}
+                        variant={activePage === "analytics" ? "secondary" : "ghost"}
                         onClick={() => router.push("/analytics")}
                         className={cn(
                             "w-full",
-                            currentPage !== "analytics" && "text-sidebar-foreground hover:text-sidebar-foreground hover:bg-sidebar-accent",
+                            activePage !== "analytics" && "text-sidebar-foreground hover:text-sidebar-foreground hover:bg-sidebar-accent",
                             sidebarCollapsed ? "justify-center px-0" : "justify-start",
                         )}
                     >
@@ -83,11 +95,11 @@ export function AppSidebar({ showBackButton = false, currentPage = "dashboard" }
                         {!sidebarCollapsed && "Analytics"}
                     </Button>
                     <Button
-                        variant={currentPage === "spc" ? "secondary" : "ghost"}
+                        variant={activePage === "spc" ? "secondary" : "ghost"}
                         onClick={() => router.push("/spc")}
                         className={cn(
                             "w-full",
-                            currentPage !== "spc" && "text-sidebar-foreground hover:text-sidebar-foreground hover:bg-sidebar-accent",
+                            activePage !== "spc" && "text-sidebar-foreground hover:text-sidebar-foreground hover:bg-sidebar-accent",
                             sidebarCollapsed ? "justify-center px-0" : "justify-start",
                         )}
                     >
@@ -95,11 +107,11 @@ export function AppSidebar({ showBackButton = false, currentPage = "dashboard" }
                         {!sidebarCollapsed && "SPC Charts"}
                     </Button>
                     <Button
-                        variant={currentPage === "rca" ? "secondary" : "ghost"}
+                        variant={activePage === "rca" ? "secondary" : "ghost"}
                         onClick={() => router.push("/rca")}
                         className={cn(
                             "w-full",
-                            currentPage !== "rca" && "text-sidebar-foreground hover:text-sidebar-foreground hover:bg-sidebar-accent",
+                            activePage !== "rca" && "text-sidebar-foreground hover:text-sidebar-foreground hover:bg-sidebar-accent",
                             sidebarCollapsed ? "justify-center px-0" : "justify-start",
                         )}
                     >
@@ -107,11 +119,11 @@ export function AppSidebar({ showBackButton = false, currentPage = "dashboard" }
                         {!sidebarCollapsed && "Root Cause"}
                     </Button>
                     <Button
-                        variant={currentPage === "parameters" ? "secondary" : "ghost"}
+                        variant={activePage === "parameters" ? "secondary" : "ghost"}
                         onClick={() => router.push("/parameters")}
                         className={cn(
                             "w-full",
-                            currentPage !== "parameters" && "text-sidebar-foreground hover:text-sidebar-foreground hover:bg-sidebar-accent",
+                            activePage !== "parameters" && "text-sidebar-foreground hover:text-sidebar-foreground hover:bg-sidebar-accent",
                             sidebarCollapsed ? "justify-center px-0" : "justify-start",
                         )}
                     >
@@ -119,11 +131,11 @@ export function AppSidebar({ showBackButton = false, currentPage = "dashboard" }
                         {!sidebarCollapsed && "Parameters"}
                     </Button>
                     <Button
-                        variant={currentPage === "copilot" ? "secondary" : "ghost"}
+                        variant={activePage === "copilot" ? "secondary" : "ghost"}
                         onClick={() => router.push("/copilot")}
                         className={cn(
                             "w-full",
-                            currentPage !== "copilot" && "text-sidebar-foreground hover:text-sidebar-foreground hover:bg-sidebar-accent",
+                            activePage !== "copilot" && "text-sidebar-foreground hover:text-sidebar-foreground hover:bg-sidebar-accent",
                             sidebarCollapsed ? "justify-center px-0" : "justify-start",
                         )}
                     >

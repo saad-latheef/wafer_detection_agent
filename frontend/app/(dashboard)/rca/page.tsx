@@ -5,7 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { Brain, AlertTriangle, CheckCircle2, Target, TrendingUp, TrendingDown, Minus, Loader2, ChevronRight, Wrench, Shield } from "lucide-react";
-import { AppSidebar } from "@/components/layout/AppSidebar";
+import { PageTransition } from "@/components/layout/PageTransition";
 import { cn } from "@/lib/utils";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell, PieChart, Pie } from "recharts";
 
@@ -97,35 +97,28 @@ export default function RCAPage() {
 
     if (loading) {
         return (
-            <>
-                <AppSidebar showBackButton={true} currentPage="rca" />
-                <div className={cn("transition-all duration-300 ml-64 flex items-center justify-center min-h-screen")}>
-                    <div className="text-center">
-                        <Loader2 className="h-12 w-12 animate-spin mx-auto mb-4 text-primary" />
-                        <p className="text-muted-foreground">Analyzing defect data...</p>
-                    </div>
+            <div className="flex items-center justify-center min-h-screen ml-64">
+                <div className="text-center">
+                    <Loader2 className="h-12 w-12 animate-spin mx-auto mb-4 text-primary" />
+                    <p className="text-muted-foreground">Analyzing defect data...</p>
                 </div>
-            </>
+            </div>
         );
     }
 
     if (error || !data) {
         return (
-            <>
-                <AppSidebar showBackButton={true} currentPage="rca" />
-                <div className={cn("transition-all duration-300 ml-64 flex items-center justify-center min-h-screen")}>
-                    <div className="text-center">
-                        <AlertTriangle className="h-12 w-12 mx-auto mb-4 text-destructive" />
-                        <p className="text-destructive">{error}</p>
-                    </div>
+            <div className="flex items-center justify-center min-h-screen ml-64">
+                <div className="text-center">
+                    <AlertTriangle className="h-12 w-12 mx-auto mb-4 text-destructive" />
+                    <p className="text-destructive">{error}</p>
                 </div>
-            </>
+            </div>
         );
     }
 
     return (
-        <>
-            <AppSidebar showBackButton={true} currentPage="rca" />
+        <PageTransition>
             <div className={cn("transition-all duration-300", "ml-64")}>
                 <div className="container mx-auto p-8">
                     {/* Header */}
@@ -376,6 +369,6 @@ export default function RCAPage() {
                     </Card>
                 </div>
             </div>
-        </>
+        </PageTransition>
     );
 }

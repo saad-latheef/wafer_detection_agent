@@ -5,7 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
 import { TrendingUp, AlertTriangle, Package, FileText } from "lucide-react";
-import { AppSidebar } from "@/components/layout/AppSidebar";
+import { PageTransition } from "@/components/layout/PageTransition";
 import { cn } from "@/lib/utils";
 
 interface TrendData {
@@ -58,8 +58,7 @@ export default function AnalyticsPage() {
     }
 
     return (
-        <>
-            <AppSidebar showBackButton={true} currentPage="analytics" />
+        <PageTransition>
             <div className={cn("transition-all duration-300", "ml-64")}>
                 <div className="container mx-auto p-8">
                     <div className="mb-8 flex items-center justify-between">
@@ -202,6 +201,6 @@ export default function AnalyticsPage() {
                     </Card>
                 </div>
             </div>
-        </>
+        </PageTransition>
     );
 }

@@ -5,7 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Cell } from "recharts";
 import { Thermometer, Gauge, Timer, Wind, Zap } from "lucide-react";
-import { AppSidebar } from "@/components/layout/AppSidebar";
+import { PageTransition } from "@/components/layout/PageTransition";
 import { cn } from "@/lib/utils";
 
 interface ParameterData {
@@ -144,8 +144,7 @@ export default function ProcessParametersPage() {
     }
 
     return (
-        <>
-            <AppSidebar showBackButton={true} currentPage="config" />
+        <PageTransition>
             <div className={cn("transition-all duration-300", "ml-64")}>
                 <div className="container mx-auto p-8">
                     {/* Header */}
@@ -274,6 +273,6 @@ export default function ProcessParametersPage() {
                     </Card>
                 </div>
             </div>
-        </>
+        </PageTransition>
     );
 }

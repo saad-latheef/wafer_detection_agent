@@ -67,6 +67,8 @@
     "zod": "3.25.76"
   },
   "devDependencies": {
+    "@babel/core": "^7.28.5",
+    "@next/swc-wasm-nodejs": "^16.1.0",
     "@tailwindcss/postcss": "^4.1.9",
     "@types/node": "^22",
     "@types/react": "^19",

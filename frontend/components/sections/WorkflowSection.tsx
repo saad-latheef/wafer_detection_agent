@@ -139,8 +139,8 @@ export default function WorkflowSection() {
                                     <div className="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 flex items-center justify-center">
                                         <div
                                             className={`w-12 h-12 rounded-full border-2 flex items-center justify-center font-bold text-sm ${step.active
-                                                    ? "bg-primary border-primary text-background glow-cyan"
-                                                    : "bg-background-card border-white/20 text-text-secondary"
+                                                ? "bg-primary border-primary text-background glow-cyan"
+                                                : "bg-background-card border-white/20 text-text-secondary"
                                                 }`}
                                         >
                                             {step.number}
@@ -209,8 +209,8 @@ export default function WorkflowSection() {
                                 <div className="flex items-start gap-6">
                                     <div
                                         className={`w-16 h-16 rounded-full border-2 flex items-center justify-center font-bold text-xl flex-shrink-0 ${step.active
-                                                ? "bg-primary border-primary text-background glow-cyan"
-                                                : "bg-background-darker border-white/20 text-text-secondary"
+                                            ? "bg-primary border-primary text-background glow-cyan"
+                                            : "bg-background-darker border-white/20 text-text-secondary"
                                             }`}
                                     >
                                         {step.number}

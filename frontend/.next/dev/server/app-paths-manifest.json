@@ -1,16 +1,3 @@
 {
-  "/(dashboard)/analysis/page": "app/(dashboard)/analysis/page.js",
-  "/(dashboard)/analytics/page": "app/(dashboard)/analytics/page.js",
-  "/(dashboard)/copilot/page": "app/(dashboard)/copilot/page.js",
-  "/(dashboard)/parameters/page": "app/(dashboard)/parameters/page.js",
-  "/(dashboard)/rca/page": "app/(dashboard)/rca/page.js",
-  "/(dashboard)/spc/page": "app/(dashboard)/spc/page.js",
-  "/_not-found/page": "app/_not-found/page.js",
-  "/analysis/page": "app/analysis/page.js",
-  "/analytics/page": "app/analytics/page.js",
-  "/copilot/page": "app/copilot/page.js",
-  "/page": "app/page.js",
-  "/parameters/page": "app/parameters/page.js",
-  "/rca/page": "app/rca/page.js",
-  "/spc/page": "app/spc/page.js"
+  "/page": "app/page.js"
 }

@@ -297,6 +297,9 @@ export default function SPCPage() {
                                             dataKey="value"
                                             stroke="#00d4ff"
                                             strokeWidth={2}
+                                            isAnimationActive={true}
+                                            animationDuration={1500}
+                                            animationEasing="ease-in-out"
                                             dot={(props: any) => {
                                                 const point = props.payload as SPCDataPoint;
                                                 const isViolation = point.is_out_of_control;

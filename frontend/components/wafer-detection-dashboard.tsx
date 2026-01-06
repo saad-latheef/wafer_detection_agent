@@ -795,7 +795,7 @@ ${separator}
           <CardHeader>
             <CardTitle className="flex items-center justify-between">
               <span>Data Ingestion</span>
-              <span className="text-sm font-normal text-muted-foreground">Supported formats: NPY (wafer maps)</span>
+              <span className="text-sm font-normal text-muted-foreground">Supported formats: NPY, PNG, JPG</span>
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -805,7 +805,7 @@ ${separator}
                 <div className="relative">
                   <input
                     type="file"
-                    accept=".npy"
+                    accept=".npy,.png,.jpg,.jpeg"
                     multiple
                     onChange={handleFileUpload}
                     className="hidden"

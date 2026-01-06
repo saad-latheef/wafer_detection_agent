@@ -96,9 +96,9 @@ export default function CopilotPage() {
 
     return (
         <PageTransition className="flex-1 overflow-hidden">
-            <div className={cn("transition-all duration-300", "ml-64 h-screen flex flex-col")}>
+            <div className="ml-64 h-screen flex flex-col overflow-hidden">
                 {/* Header */}
-                <div className="border-b p-6">
+                <div className="border-b p-6 shrink-0">
                     <div className="flex items-center gap-3">
                         <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-purple-500 to-cyan-500 flex items-center justify-center">
                             <Sparkles className="h-6 w-6 text-white" />
@@ -114,8 +114,8 @@ export default function CopilotPage() {
                     </div>
                 </div>
 
-                {/* Chat Area */}
-                <ScrollArea className="flex-1 p-6" ref={scrollRef}>
+                {/* Chat Area - Now properly scrollable */}
+                <div className="flex-1 overflow-y-auto p-6" ref={scrollRef}>
                     <div className="max-w-3xl mx-auto space-y-6">
                         {messages.map((message) => (
                             <div key={message.id} className={cn(
@@ -176,10 +176,10 @@ export default function CopilotPage() {
                             </div>
                         )}
                     </div>
-                </ScrollArea>
+                </div>
 
                 {/* Input Area */}
-                <div className="border-t p-6">
+                <div className="border-t p-6 shrink-0">
                     <div className="max-w-3xl mx-auto">
                         <div className="flex gap-4">
                             <Input

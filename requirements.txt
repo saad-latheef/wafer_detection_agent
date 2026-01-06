@@ -12,6 +12,9 @@ Pillow>=9.5
 torch>=2.0
 torchvision>=0.15
 
+# TensorFlow (for ViT and .h5 models)
+tensorflow>=2.15.0
+
 # Data visualization (optional but useful for debugging)
 matplotlib>=3.7
 
@@ -43,5 +46,6 @@ python-multipart>=0.0.6
 # Database & Analytics dependencies
 # =====================================
 sqlalchemy>=2.0.23
+pydantic-settings>=2.0.0
 reportlab>=4.0.7
 openpyxl>=3.1.0

@@ -30,6 +30,7 @@ export function AppSidebar({ showBackButton = false, currentPage }: AppSidebarPr
         if (pathname.startsWith("/rca")) return "rca";
         if (pathname.startsWith("/parameters")) return "parameters";
         if (pathname.startsWith("/copilot")) return "copilot";
+        if (pathname.startsWith("/history")) return "history";
         if (pathname.startsWith("/notifications")) return "config";
         return "dashboard";
     })();
@@ -143,9 +144,11 @@ export function AppSidebar({ showBackButton = false, currentPage }: AppSidebarPr
                         {!sidebarCollapsed && "AI Copilot"}
                     </Button>
                     <Button
-                        variant="ghost"
+                        variant={activePage === "history" ? "secondary" : "ghost"}
+                        onClick={() => router.push("/history")}
                         className={cn(
-                            "w-full text-sidebar-foreground hover:text-sidebar-foreground hover:bg-sidebar-accent",
+                            "w-full",
+                            activePage !== "history" && "text-sidebar-foreground hover:text-sidebar-foreground hover:bg-sidebar-accent",
                             sidebarCollapsed ? "justify-center px-0" : "justify-start",
                         )}
                     >

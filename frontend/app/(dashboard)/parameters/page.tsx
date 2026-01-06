@@ -29,67 +29,26 @@ export default function ProcessParametersPage() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        generateMockData();
+        fetchParameterData();
     }, [selectedParam]);
 
-    const generateMockData = () => {
-        // Generate realistic mock data for demo
+    const fetchParameterData = async () => {
         setLoading(true);
-
-        const tools = ["TOOL-1", "TOOL-2", "TOOL-3", "TOOL-4", "TOOL-5"];
-        const data: ParameterData[] = [];
-
-        // Generate 50 data points
-        for (let i = 0; i < 50; i++) {
-            let value: number;
-            let defectRate: number;
-
-            switch (selectedParam) {
-                case "temperature":
-                    value = 350 + Math.random() * 50; // 350-400°C
-                    defectRate = 5 + (value - 370) * 0.3 + Math.random() * 5;
-                    break;
-                case "pressure":
-                    value = 10 + Math.random() * 20; // 10-30 mTorr
-                    defectRate = 5 + Math.abs(20 - value) * 0.5 + Math.random() * 5;
-                    break;
-                case "time":
-                    value = 30 + Math.random() * 60; // 30-90 seconds
-                    defectRate = 5 + (value - 60) * 0.1 + Math.random() * 5;
-                    break;
-                case "gas_flow":
-                    value = 100 + Math.random() * 100; // 100-200 sccm
-                    defectRate = 5 + Math.abs(150 - value) * 0.1 + Math.random() * 5;
-                    break;
-                case "rf_power":
-                    value = 200 + Math.random() * 300; // 200-500 W
-                    defectRate = 5 + (value - 300) * 0.02 + Math.random() * 5;
-                    break;
-                default:
-                    value = Math.random() * 100;
-                    defectRate = Math.random() * 20;
-            }
-
-            data.push({
-                parameter: selectedParam,
-                value: Math.round(value * 10) / 10,
-                defect_rate: Math.max(0, Math.min(30, Math.round(defectRate * 10) / 10)),
-                tool_id: tools[Math.floor(Math.random() * tools.length)]
-            });
+        try {
+            const response = await fetch(`http://localhost:8000/api/process-parameters?parameter=${selectedParam}`);
+            if (!response.ok) throw new Error("Failed to fetch parameter data");
+            
+            const data = await response.json();
+            setParameterData(data.parameter_data || []);
+            setCorrelations(data.correlations || []);
+        } catch (error) {
+            console.error("Failed to fetch parameter data:", error);
+            // Fallback to empty data on error
+            setParameterData([]);
+            setCorrelations([]);
+        } finally {
+            setLoading(false);
         }
-
-        setParameterData(data);
-
-        // Generate correlations
-        setCorrelations([
-            { parameter: "Temperature", correlation: 0.72, trend: "positive", significance: "high" },
-            { parameter: "Pressure", correlation: -0.45, trend: "negative", significance: "medium" },
-            { parameter: "Process Time", correlation: 0.28, trend: "positive", significance: "low" },
-            { parameter: "Gas Flow", correlation: 0.65, trend: "positive", significance: "high" },
-            { parameter: "RF Power", correlation: 0.38, trend: "positive", significance: "medium" }
-        ]);
-
-        setLoading(false);
     };
 
     const getParamIcon = (param: string) => {

@@ -6,6 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
+import { Input } from "@/components/ui/input"
 import {
   Upload,
   CheckCircle2,
@@ -141,6 +142,10 @@ export function WaferDetectionDashboard() {
   const [trendAnalysisResult, setTrendAnalysisResult] = useState<string>("")
   const [isTrendAnalyzing, setIsTrendAnalyzing] = useState(false)
   const [isAnalyzing, setIsAnalyzing] = useState(false)
+  
+  // Tool & Chamber IDs
+  const [toolId, setToolId] = useState<string>("")
+  const [chamberId, setChamberId] = useState<string>("")
   const [waferAnalyses, setWaferAnalyses] = useState<WaferAnalysis[]>([])
   const [analysisComplete, setAnalysisComplete] = useState(false)
   const [fullProbDist, setFullProbDist] = useState<Record<string, number>>({})
@@ -277,6 +282,9 @@ export function WaferDetectionDashboard() {
         if (wafer.file) {
           formData.append('file', wafer.file)
         }
+        // Add tool_id and chamber_id
+        if (toolId) formData.append('tool_id', toolId)
+        if (chamberId) formData.append('chamber_id', chamberId)
 
         const response = await fetch('http://localhost:8000/api/analyze', {
           method: 'POST',
@@ -802,6 +810,35 @@ ${separator}
             <div className="grid lg:grid-cols-2 gap-6">
               {/* Upload Area */}
               <div className="flex flex-col gap-4">
+                {/* Tool & Chamber ID Inputs */}
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="tool-id" className="block text-sm font-medium mb-2">
+                      Tool ID <span className="text-muted-foreground">(Optional)</span>
+                    </label>
+                    <Input
+                      id="tool-id"
+                      type="text"
+                      placeholder="e.g., PROD-TOOL-123"
+                      value={toolId}
+                      onChange={(e) => setToolId(e.target.value)}
+                      className="w-full"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="chamber-id" className="block text-sm font-medium mb-2">
+                      Chamber ID <span className="text-muted-foreground">(Optional)</span>
+                    </label>
+                    <Input
+                      id="chamber-id"
+                      type="text"
+                      placeholder="e.g., CHAMBER-A"
+                      value={chamberId}
+                      onChange={(e) => setChamberId(e.target.value)}
+                      className="w-full"
+                    />
+                  </div>
+                </div>
                 <div className="relative">
                   <input
                     type="file"

@@ -6,7 +6,7 @@ import os
 import sys
 import tempfile
 import numpy as np
-from fastapi import FastAPI, UploadFile, File, HTTPException, Request
+from fastapi import FastAPI, UploadFile, File, HTTPException, Request, Form
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import List, Dict, Optional, Any
@@ -582,7 +582,7 @@ async def export_pdf(tool_id: str = "", start_date: str = "", end_date: str = ""
 
 
 @app.post("/api/analyze")
-async def analyze_wafer(file: UploadFile = File(...), tool_id: str = "", chamber_id: str = ""):
+async def analyze_wafer(file: UploadFile = File(...), tool_id: str = Form(""), chamber_id: str = Form("")):
     allowed_extensions = ('.npy', '.png', '.jpg', '.jpeg')
     if not file.filename.lower().endswith(allowed_extensions):
         raise HTTPException(status_code=400, detail="Only .npy, .png, .jpg, .jpeg files are supported")
@@ -692,11 +692,33 @@ async def analyze_wafer(file: UploadFile = File(...), tool_id: str = "", chamber
         # Determine model name
         model_name = context.model_name if hasattr(context, 'model_name') else "k_cross_CNN (Pattern Detection)"
 
+        # Helper function to extract model type from model name
+        def get_model_type_name(model_name: str) -> str:
+            """Extract clean model type name (e.g., 'ViT', 'CNN', 'ResNet')"""
+            model_lower = model_name.lower()
+            if 'vit' in model_lower or 'vision_transformer' in model_lower or 'transformer' in model_lower:
+                return "ViT"
+            elif 'cnn' in model_lower or 'k_cross' in model_lower:
+                return "CNN"
+            elif 'resnet' in model_lower:
+                return "ResNet"
+            elif 'efficientnet' in model_lower:
+                return "EfficientNet"
+            elif 'mobilenet' in model_lower:
+                return "MobileNet"
+            else:
+                # Return first word or abbreviation from model name
+                parts = model_name.replace('_', ' ').replace('-', ' ').split()
+                return parts[0].upper() if parts else model_name
+        
         # Create agent results
         agent_results = []
         
         # Add entry for EACH individual model run
         individual_results = context.individual_results if hasattr(context, 'individual_results') else []
+        print(f"\n🔍 [DEBUG] individual_results: {individual_results}")
+        print(f"🔍 [DEBUG] bool(individual_results): {bool(individual_results)}")
+        print(f"🔍 [DEBUG] len(individual_results): {len(individual_results)}")
         
         # If individual results exist, create a card for each model
         if individual_results:
@@ -717,8 +739,11 @@ async def analyze_wafer(file: UploadFile = File(...), tool_id: str = "", chamber
                     m_sorted = sorted(m_probs_map.items(), key=lambda x: x[1], reverse=True)
                     m_top_probs = [PatternProbability(pattern=p, probability=round(v, 4)) for p, v in m_sorted]
                     
+                    # Get clean model type name
+                    model_type = get_model_type_name(m_name)
+                    
                     agent_results.append(AgentResult(
-                        name=f"Model: {m_name}",
+                        name=model_type,
                         model=m_name,
                         topPattern=m_pred,
                         topProbabilities=m_top_probs,
@@ -737,8 +762,11 @@ async def analyze_wafer(file: UploadFile = File(...), tool_id: str = "", chamber
             sorted_probs = sorted(prob_dist.items(), key=lambda x: x[1], reverse=True)
             top_probs = [PatternProbability(pattern=p, probability=round(v, 4)) for p, v in sorted_probs]
             
+            # Get clean model type name
+            model_type = get_model_type_name(model_name)
+            
             agent_results.append(AgentResult(
-                name="Defect Classifier",
+                name=model_type,
                 model=model_name,
                 topPattern=predicted,
                 topProbabilities=top_probs,
@@ -749,10 +777,14 @@ async def analyze_wafer(file: UploadFile = File(...), tool_id: str = "", chamber
                 actionSuggestions=ACTION_SUGGESTIONS.get(predicted, [])
             ))
 
-        # ALWAYS add ML model card if we have a model_name
+        # ALWAYS add a primary ML model card 
         if hasattr(context, 'model_name') and context.model_name:
+            model_type = get_model_type_name(context.model_name)
+            sorted_probs = sorted(prob_dist.items(), key=lambda x: x[1], reverse=True)
+            top_probs = [PatternProbability(pattern=p, probability=round(v, 4)) for p, v in sorted_probs]
+            
             agent_results.insert(0, AgentResult(
-                name="ML Model",
+                name=model_type,
                 model=context.model_name,
                 topPattern=predicted,
                 topProbabilities=top_probs if top_probs else [],
@@ -796,12 +828,16 @@ async def analyze_wafer(file: UploadFile = File(...), tool_id: str = "", chamber
         # Save to database
         db = next(get_db())
         try:
+            # Use model type as fallback for tool_id if not provided
+            final_tool_id = tool_id if tool_id else get_model_type_name(model_name)
+            final_chamber_id = chamber_id if chamber_id else "UNKNOWN"
+            
             # Create wafer record
             wafer_record = Wafer(
                 wafer_id=f"W-{hash(file.filename) % 10000:04d}",
                 file_name=file.filename,
-                tool_id=tool_id or "UNKNOWN",
-                chamber_id=chamber_id or "UNKNOWN",
+                tool_id=final_tool_id,
+                chamber_id=final_chamber_id,
                 processed_at=datetime.utcnow(),
                 predicted_class=predicted,
                 confidence=confidence,

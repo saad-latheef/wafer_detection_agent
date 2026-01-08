@@ -6,7 +6,7 @@
 [![Next.js](https://img.shields.io/badge/Next.js-15.5-black.svg)](https://nextjs.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-Latest-009688.svg)](https://fastapi.tiangolo.com/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-
+  
 ---
 
 ## 📋 Table of Contents
@@ -906,8 +906,8 @@ Contributions welcome! Please:
 
 ## 👥 Authors
 
-- **R Vaishnav Raj** - *Frontend Development & CNN Model* - [GitHub](https://github.com/R-Vaishnav-Raj)
-- **Saad Abdul Latheef** - *Backend Architecture, ResNet18 & Ensemble Models* - [GitHub](https://github.com/saad-latheef)
+- **R Vaishnav Raj** - *Agentic System Design, Backend Architecture, Frontend Development* - [GitHub](https://github.com/R-Vaishnav-Raj)
+- **Saad Abdul Latheef** - *ResNet18 & Ensemble Model Builds* - [GitHub](https://github.com/saad-latheef)
 
 ---
 

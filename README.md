@@ -904,6 +904,13 @@ Contributions welcome! Please:
 
 ---
 
+## 👥 Authors
+
+- **R Vaishnav Raj** - *Frontend Development & CNN Model* - [GitHub](https://github.com/R-Vaishnav-Raj)
+- **Saad Abdul Latheef** - *Backend Architecture, ResNet18 & Ensemble Models* - [GitHub](https://github.com/saad-latheef)
+
+---
+
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
